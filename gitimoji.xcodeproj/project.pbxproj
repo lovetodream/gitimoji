@@ -7,14 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060A3EDF2518CE1A0040A44C /* GitimojiAutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06131F1B2518C9A6003159AA /* GitimojiAutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		06131F1E2518C9A6003159AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06131F1D2518C9A6003159AA /* AppDelegate.swift */; };
+		06131F222518C9B3003159AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06131F212518C9B3003159AA /* Assets.xcassets */; };
+		06131F252518C9B3003159AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06131F232518C9B3003159AA /* Main.storyboard */; };
+		065828882518D61D000557C3 /* EmojiCodeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065828872518D61D000557C3 /* EmojiCodeButtonStyle.swift */; };
+		0658288F2518D696000557C3 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658288E2518D696000557C3 /* EmojiRow.swift */; };
+		0658289D2518E082000557C3 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658289C2518E082000557C3 /* ActivityIndicator.swift */; };
+		06767C2F25164CF0006BF915 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06767C2E25164CF0006BF915 /* Defaults.swift */; };
+		06767C33251659AD006BF915 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06767C32251659AD006BF915 /* StoreKit.framework */; };
+		06C7402A251A6687000B6E0A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C74029251A6687000B6E0A /* SettingsView.swift */; };
 		06DEE03825161C6B002D3605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE03725161C6B002D3605 /* AppDelegate.swift */; };
 		06DEE03A25161C6B002D3605 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE03925161C6B002D3605 /* ContentView.swift */; };
 		06DEE03C25161C6D002D3605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE03B25161C6D002D3605 /* Assets.xcassets */; };
 		06DEE03F25161C6D002D3605 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE03E25161C6D002D3605 /* Preview Assets.xcassets */; };
 		06DEE04225161C6D002D3605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE04025161C6D002D3605 /* Main.storyboard */; };
+		06DEE04D2516233E002D3605 /* gitmojis.json in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE04C2516233E002D3605 /* gitmojis.json */; };
+		06DEE0502516236D002D3605 /* Gitmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE04F2516236D002D3605 /* Gitmoji.swift */; };
+		06DEE0532516238C002D3605 /* DecodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE0522516238C002D3605 /* DecodeHelper.swift */; };
+		06DEE05625162C75002D3605 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05525162C75002D3605 /* ColorExtension.swift */; };
+		06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05825162E98002D3605 /* Pasteboard.swift */; };
+		06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05B2516372F002D3605 /* SearchVM.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		06131F2B2518CD6C003159AA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				060A3EDF2518CE1A0040A44C /* GitimojiAutoLaunchHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		06131F1B2518C9A6003159AA /* GitimojiAutoLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitimojiAutoLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06131F1D2518C9A6003159AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		06131F212518C9B3003159AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06131F242518C9B3003159AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06131F262518C9B3003159AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06131F272518C9B3003159AA /* GitimojiAutoLaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitimojiAutoLaunchHelper.entitlements; sourceTree = "<group>"; };
+		065828872518D61D000557C3 /* EmojiCodeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCodeButtonStyle.swift; sourceTree = "<group>"; };
+		0658288E2518D696000557C3 /* EmojiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRow.swift; sourceTree = "<group>"; };
+		0658289C2518E082000557C3 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		06767C2E25164CF0006BF915 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		06767C32251659AD006BF915 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		06C74029251A6687000B6E0A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		06DEE03425161C6B002D3605 /* gitimoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitimoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DEE03725161C6B002D3605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DEE03925161C6B002D3605 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,24 +64,122 @@
 		06DEE04125161C6D002D3605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06DEE04325161C6D002D3605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06DEE04425161C6D002D3605 /* gitimoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gitimoji.entitlements; sourceTree = "<group>"; };
+		06DEE04C2516233E002D3605 /* gitmojis.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gitmojis.json; sourceTree = "<group>"; };
+		06DEE04F2516236D002D3605 /* Gitmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gitmoji.swift; sourceTree = "<group>"; };
+		06DEE0522516238C002D3605 /* DecodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeHelper.swift; sourceTree = "<group>"; };
+		06DEE05525162C75002D3605 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		06DEE05825162E98002D3605 /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
+		06DEE05B2516372F002D3605 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		06DEE03125161C6B002D3605 /* Frameworks */ = {
+		06131F182518C9A6003159AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06DEE03125161C6B002D3605 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06767C33251659AD006BF915 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06131F1C2518C9A6003159AA /* GitimojiAutoLaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				06131F1D2518C9A6003159AA /* AppDelegate.swift */,
+				06131F212518C9B3003159AA /* Assets.xcassets */,
+				06131F232518C9B3003159AA /* Main.storyboard */,
+				06131F262518C9B3003159AA /* Info.plist */,
+				06131F272518C9B3003159AA /* GitimojiAutoLaunchHelper.entitlements */,
+			);
+			path = GitimojiAutoLaunchHelper;
+			sourceTree = "<group>";
+		};
+		065828782518D43D000557C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				06DEE05B2516372F002D3605 /* SearchVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		065828792518D472000557C3 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				06767C2E25164CF0006BF915 /* Defaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		0658287A2518D48A000557C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06DEE04F2516236D002D3605 /* Gitmoji.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0658287B2518D491000557C3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				06DEE04C2516233E002D3605 /* gitmojis.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0658287E2518D4CA000557C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				06DEE0522516238C002D3605 /* DecodeHelper.swift */,
+				06DEE05825162E98002D3605 /* Pasteboard.swift */,
+				06DEE05525162C75002D3605 /* ColorExtension.swift */,
+				065828792518D472000557C3 /* UserDefaults */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		065828812518D599000557C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0658288E2518D696000557C3 /* EmojiRow.swift */,
+				06C74029251A6687000B6E0A /* SettingsView.swift */,
+				06DEE03925161C6B002D3605 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		065828862518D604000557C3 /* ViewHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				065828872518D61D000557C3 /* EmojiCodeButtonStyle.swift */,
+				0658289C2518E082000557C3 /* ActivityIndicator.swift */,
+			);
+			path = ViewHelpers;
+			sourceTree = "<group>";
+		};
+		06767C31251659AD006BF915 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06767C32251659AD006BF915 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		06DEE02B25161C6B002D3605 = {
 			isa = PBXGroup;
 			children = (
 				06DEE03625161C6B002D3605 /* gitimoji */,
+				06131F1C2518C9A6003159AA /* GitimojiAutoLaunchHelper */,
 				06DEE03525161C6B002D3605 /* Products */,
+				06767C31251659AD006BF915 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				06DEE03425161C6B002D3605 /* gitimoji.app */,
+				06131F1B2518C9A6003159AA /* GitimojiAutoLaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,8 +195,13 @@
 		06DEE03625161C6B002D3605 /* gitimoji */ = {
 			isa = PBXGroup;
 			children = (
+				065828862518D604000557C3 /* ViewHelpers */,
+				065828812518D599000557C3 /* Views */,
+				0658287E2518D4CA000557C3 /* Helpers */,
+				0658287B2518D491000557C3 /* Data */,
+				0658287A2518D48A000557C3 /* Model */,
+				065828782518D43D000557C3 /* ViewModels */,
 				06DEE03725161C6B002D3605 /* AppDelegate.swift */,
-				06DEE03925161C6B002D3605 /* ContentView.swift */,
 				06DEE03B25161C6D002D3605 /* Assets.xcassets */,
 				06DEE04025161C6D002D3605 /* Main.storyboard */,
 				06DEE04325161C6D002D3605 /* Info.plist */,
@@ -77,6 +222,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		06131F1A2518C9A6003159AA /* GitimojiAutoLaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06131F282518C9B3003159AA /* Build configuration list for PBXNativeTarget "GitimojiAutoLaunchHelper" */;
+			buildPhases = (
+				06131F172518C9A6003159AA /* Sources */,
+				06131F182518C9A6003159AA /* Frameworks */,
+				06131F192518C9A6003159AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GitimojiAutoLaunchHelper;
+			productName = GitimojiAutoLaunchHelper;
+			productReference = 06131F1B2518C9A6003159AA /* GitimojiAutoLaunchHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		06DEE03325161C6B002D3605 /* gitimoji */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DEE04725161C6D002D3605 /* Build configuration list for PBXNativeTarget "gitimoji" */;
@@ -84,12 +246,15 @@
 				06DEE03025161C6B002D3605 /* Sources */,
 				06DEE03125161C6B002D3605 /* Frameworks */,
 				06DEE03225161C6B002D3605 /* Resources */,
+				06131F2B2518CD6C003159AA /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = gitimoji;
+			packageProductDependencies = (
+			);
 			productName = gitimoji;
 			productReference = 06DEE03425161C6B002D3605 /* gitimoji.app */;
 			productType = "com.apple.product-type.application";
@@ -100,9 +265,12 @@
 		06DEE02C25161C6B002D3605 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					06131F1A2518C9A6003159AA = {
+						CreatedOnToolsVersion = 11.7;
+					};
 					06DEE03325161C6B002D3605 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -117,16 +285,28 @@
 				Base,
 			);
 			mainGroup = 06DEE02B25161C6B002D3605;
+			packageReferences = (
+			);
 			productRefGroup = 06DEE03525161C6B002D3605 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				06DEE03325161C6B002D3605 /* gitimoji */,
+				06131F1A2518C9A6003159AA /* GitimojiAutoLaunchHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		06131F192518C9A6003159AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06131F222518C9B3003159AA /* Assets.xcassets in Resources */,
+				06131F252518C9B3003159AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06DEE03225161C6B002D3605 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,24 +314,51 @@
 				06DEE04225161C6D002D3605 /* Main.storyboard in Resources */,
 				06DEE03F25161C6D002D3605 /* Preview Assets.xcassets in Resources */,
 				06DEE03C25161C6D002D3605 /* Assets.xcassets in Resources */,
+				06DEE04D2516233E002D3605 /* gitmojis.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		06131F172518C9A6003159AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06131F1E2518C9A6003159AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06DEE03025161C6B002D3605 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				06DEE03A25161C6B002D3605 /* ContentView.swift in Sources */,
+				06767C2F25164CF0006BF915 /* Defaults.swift in Sources */,
+				06C7402A251A6687000B6E0A /* SettingsView.swift in Sources */,
+				06DEE0532516238C002D3605 /* DecodeHelper.swift in Sources */,
+				06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */,
+				0658289D2518E082000557C3 /* ActivityIndicator.swift in Sources */,
 				06DEE03825161C6B002D3605 /* AppDelegate.swift in Sources */,
+				06DEE0502516236D002D3605 /* Gitmoji.swift in Sources */,
+				065828882518D61D000557C3 /* EmojiCodeButtonStyle.swift in Sources */,
+				06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */,
+				0658288F2518D696000557C3 /* EmojiRow.swift in Sources */,
+				06DEE05625162C75002D3605 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		06131F232518C9B3003159AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06131F242518C9B3003159AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		06DEE04025161C6D002D3605 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -163,6 +370,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		06131F292518C9B3003159AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GitimojiAutoLaunchHelper/GitimojiAutoLaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V7ET8TF7ZR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = GitimojiAutoLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		06131F2A2518C9B3003159AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GitimojiAutoLaunchHelper/GitimojiAutoLaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V7ET8TF7ZR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = GitimojiAutoLaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		06DEE04525161C6D002D3605 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -286,6 +537,7 @@
 				CODE_SIGN_ENTITLEMENTS = gitimoji/gitimoji.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"gitimoji/Preview Content\"";
 				DEVELOPMENT_TEAM = V7ET8TF7ZR;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -310,6 +562,7 @@
 				CODE_SIGN_ENTITLEMENTS = gitimoji/gitimoji.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"gitimoji/Preview Content\"";
 				DEVELOPMENT_TEAM = V7ET8TF7ZR;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -329,6 +582,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		06131F282518C9B3003159AA /* Build configuration list for PBXNativeTarget "GitimojiAutoLaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06131F292518C9B3003159AA /* Debug */,
+				06131F2A2518C9B3003159AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		06DEE02F25161C6B002D3605 /* Build configuration list for PBXProject "gitimoji" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
