@@ -18,8 +18,16 @@ class SearchVM: ObservableObject {
     var helperBundleName = "com.timozacherl.GitmojiAutoLaunchHelper"
     
     init() {
+        let foundHelper = NSWorkspace.shared.runningApplications.contains {
+            $0.bundleIdentifier == helperBundleName
+        }
+        
+        autoLaunchEnabled = foundHelper
     }
     
+    public func toggleAutoLaunch(bool: Bool) {
+        SMLoginItemSetEnabled(helperBundleName as CFString, bool)
+    }
     
     public func updateSearchText(width text: String) {
         self.isLoading = true
