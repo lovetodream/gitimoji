@@ -1,0 +1,542 @@
+[
+    {
+        "id": "5990D14F-820F-48D2-8BBB-5AAB21048F08",
+        "emoji": "🎨",
+        "entity": "&#x1f3a8;",
+        "code": ":art:",
+        "description": "Improve structure / format of the code.",
+        "name": "art",
+        "background": "ff7280"
+    },
+    {
+        "id": "BFCB9342-79FE-4623-86E4-0D7E7BA7D6C4",
+        "emoji": "⚡️",
+        "entity": "&#x26a1;",
+        "code": ":zap:",
+        "description": "Improve performance.",
+        "name": "zap",
+        "background": "40c4ff"
+    },
+    {
+        "id": "FFF1A0BD-7C74-4187-B9EF-BAAD2E3A0D95",
+        "emoji": "🔥",
+        "entity": "&#x1f525;",
+        "code": ":fire:",
+        "description": "Remove code or files.",
+        "name": "fire",
+        "background": "ff9d44"
+    },
+    {
+        "id": "A19CF523-7015-4D11-B345-06F640050E15",
+        "emoji": "🐛",
+        "entity": "&#x1f41b;",
+        "code": ":bug:",
+        "description": "Fix a bug.",
+        "name": "bug",
+        "background": "8cd842"
+    },
+    {
+        "id": "F55928AD-48C0-4619-B1F0-6485465CE761",
+        "emoji": "🚑",
+        "entity": "&#128657;",
+        "code": ":ambulance:",
+        "description": "Critical hotfix.",
+        "name": "ambulance",
+        "background": "fb584a"
+    },
+    {
+        "id": "E2984E75-A349-41D4-8409-4A30B54D309B",
+        "emoji": "✨",
+        "entity": "&#x2728;",
+        "code": ":sparkles:",
+        "description": "Introduce new features.",
+        "name": "sparkles",
+        "background": "ffe55f"
+    },
+    {
+        "id": "AB433994-3AAB-4AFD-9260-A7D62FB03D83",
+        "emoji": "📝",
+        "entity": "&#x1f4dd;",
+        "code": ":memo:",
+        "description": "Add or update documentation.",
+        "name": "memo",
+        "background": "00e676"
+    },
+    {
+        "id": "44AF6CFC-5218-479B-8B7F-CC4E73082831",
+        "emoji": "🚀",
+        "entity": "&#x1f680;",
+        "code": ":rocket:",
+        "description": "Deploy stuff.",
+        "name": "rocket",
+        "background": "00a9f0"
+    },
+    {
+        "id": "57C08E40-0B64-4ACA-A273-E1501EAAB925",
+        "emoji": "💄",
+        "entity": "&#ff99cc;",
+        "code": ":lipstick:",
+        "description": "Add or update the UI and style files.",
+        "name": "lipstick",
+        "background": "80deea"
+    },
+    {
+        "id": "3A398AB0-BC7F-45A6-90EF-DFAE51936153",
+        "emoji": "🎉",
+        "entity": "&#127881;",
+        "code": ":tada:",
+        "description": "Begin a project.",
+        "name": "tada",
+        "background": "f74d5f"
+    },
+    {
+        "id": "7C727A2E-7AB4-40F7-A2D1-E8D5CBF55505",
+        "emoji": "✅",
+        "entity": "&#x2705;",
+        "code": ":white_check_mark:",
+        "description": "Add or update tests.",
+        "name": "white-check-mark",
+        "background": "77e856"
+    },
+    {
+        "id": "FEE7A240-CC57-45F9-B987-901697B7B22E",
+        "emoji": "🔒",
+        "entity": "&#x1f512;",
+        "code": ":lock:",
+        "description": "Fix security issues.",
+        "name": "lock",
+        "background": "ffce49"
+    },
+    {
+        "id": "CAE84990-B545-46C1-9F2C-7371A107B233",
+        "emoji": "🔖",
+        "entity": "&#x1f516;",
+        "code": ":bookmark:",
+        "description": "Release / Version tags.",
+        "name": "bookmark",
+        "background": "80deea"
+    },
+    {
+        "id": "A2C96787-6B53-44C7-8BA4-AD2EA1E6D1EC",
+        "emoji": "🚨",
+        "entity": "&#x1f6a8;",
+        "code": ":rotating_light:",
+        "description": "Remove linter warnings.",
+        "name": "rotating-light",
+        "background": "536dfe"
+    },
+    {
+        "id": "12B66F2E-044B-45CF-A26B-335C0AB00E3F",
+        "emoji": "🚧",
+        "entity": "&#x1f6a7;",
+        "code": ":construction:",
+        "description": "Work in progress.",
+        "name": "construction",
+        "background": "ffb74d"
+    },
+    {
+        "id": "148FE00B-7EED-41A3-A4CD-4AC88E654CDB",
+        "emoji": "💚",
+        "entity": "&#x1f49a;",
+        "code": ":green_heart:",
+        "description": "Fix CI Build.",
+        "name": "green-heart",
+        "background": "c5e763"
+    },
+    {
+        "id": "96CD491E-A0C5-4F5B-98E4-AB8F701CC780",
+        "emoji": "⬇️",
+        "entity": "⬇️",
+        "code": ":arrow_down:",
+        "description": "Downgrade dependencies.",
+        "name": "arrow-down",
+        "background": "ef5350"
+    },
+    {
+        "id": "5B9C8136-A29D-4A15-A2F9-47EF76BB0F25",
+        "emoji": "⬆️",
+        "entity": "⬆️",
+        "code": ":arrow_up:",
+        "description": "Upgrade dependencies.",
+        "name": "arrow-up",
+        "background": "00e676"
+    },
+    {
+        "id": "E1F0FC66-A203-4C27-80DF-7F75DF46FFE4",
+        "emoji": "📌",
+        "entity": "&#x1F4CC;",
+        "code": ":pushpin:",
+        "description": "Pin dependencies to specific versions.",
+        "name": "pushpin",
+        "background": "39c2f1"
+    },
+    {
+        "id": "A2C8BEDE-0484-4201-AF38-C06F21350A6E",
+        "emoji": "👷",
+        "entity": "&#x1f477;",
+        "code": ":construction_worker:",
+        "description": "Add or update CI build system.",
+        "name": "construction-worker",
+        "background": "64b5f6"
+    },
+    {
+        "id": "72EBC0E9-78AE-4CAA-BB5C-82AD558494BC",
+        "emoji": "📈",
+        "entity": "&#x1F4C8;",
+        "code": ":chart_with_upwards_trend:",
+        "description": "Add or update analytics or track code.",
+        "name": "chart-with-upwards-trend",
+        "background": "cedae6"
+    },
+    {
+        "id": "D8A095D6-5D56-4CBA-9F47-1F48B79AD461",
+        "emoji": "♻️",
+        "entity": "&#x2672;",
+        "code": ":recycle:",
+        "description": "Refactor code.",
+        "name": "recycle",
+        "background": "77e856"
+    },
+    {
+        "id": "65693DBF-A706-46D6-A712-073C54632D91",
+        "emoji": "➕",
+        "entity": "&#10133;",
+        "code": ":heavy_plus_sign:",
+        "description": "Add a dependency.",
+        "name": "heavy-plus-sign",
+        "background": "00e676"
+    },
+    {
+        "id": "83171DDE-BF90-4DEB-BE1D-9777284EE45D",
+        "emoji": "➖",
+        "entity": "&#10134;",
+        "code": ":heavy_minus_sign:",
+        "description": "Remove a dependency.",
+        "name": "heavy-minus-sign",
+        "background": "ef5350"
+    },
+    {
+        "id": "526948E1-1404-423C-B0C4-B33E3DD05DCF",
+        "emoji": "🔧",
+        "entity": "&#x1f527;",
+        "code": ":wrench:",
+        "description": "Add or update configuration files.",
+        "name": "wrench",
+        "background": "ffc400"
+    },
+    {
+        "id": "9824CD44-2FD4-4A31-8CE6-414F862CE34D",
+        "emoji": "🔨",
+        "entity": "&#128296;",
+        "code": ":hammer:",
+        "description": "Add or update build scripts.",
+        "name": "hammer",
+        "background": "ffc400"
+    },
+    {
+        "id": "CF6D792C-1D54-4249-A8E6-CAD665EA8EE2",
+        "emoji": "🌐",
+        "entity": "&#127760;",
+        "code": ":globe_with_meridians:",
+        "description": "Internationalization and localization.",
+        "name": "globe-with-meridians",
+        "background": "e7f4ff"
+    },
+    {
+        "id": "B633AE4A-7BCD-4C27-B897-5E376D08AEBE",
+        "emoji": "✏️",
+        "entity": "&#59161;",
+        "code": ":pencil2:",
+        "description": "Fix typos.",
+        "name": "pencil2",
+        "background": "ffce49"
+    },
+    {
+        "id": "F1F481DE-E416-443A-B2DF-334B1A0CF696",
+        "emoji": "💩",
+        "entity": "&#58613;",
+        "code": ":poop:",
+        "description": "Write bad code that needs to be improved.",
+        "name": "poop",
+        "background": "a78674"
+    },
+    {
+        "id": "72D8CDA3-1689-407C-B101-825DBE087CF5",
+        "emoji": "⏪",
+        "entity": "&#9194;",
+        "code": ":rewind:",
+        "description": "Revert changes.",
+        "name": "rewind",
+        "background": "56d1d8"
+    },
+    {
+        "id": "103CDD0F-329B-4F51-BB77-E8BF5EA52CFD",
+        "emoji": "🔀",
+        "entity": "&#128256;",
+        "code": ":twisted_rightwards_arrows:",
+        "description": "Merge branches.",
+        "name": "twisted-rightwards-arrows",
+        "background": "56d1d8"
+    },
+    {
+        "id": "AEC2E49F-A9E0-42E8-AF4A-2DE449B245EF",
+        "emoji": "📦",
+        "entity": "&#1F4E6;",
+        "code": ":package:",
+        "description": "Add or update compiled files or packages.",
+        "name": "package",
+        "background": "fdd0ae"
+    },
+    {
+        "id": "19185FCC-E383-4917-AB09-CFE6CBA3AAD1",
+        "emoji": "👽",
+        "entity": "&#1F47D;",
+        "code": ":alien:",
+        "description": "Update code due to external API changes.",
+        "name": "alien",
+        "background": "c5e763"
+    },
+    {
+        "id": "02E2D8AC-72BA-422A-BA85-FCFA07B69CE4",
+        "emoji": "🚚",
+        "entity": "&#1F69A;",
+        "code": ":truck:",
+        "description": "Move or rename resources (e.g.: files, paths, routes).",
+        "name": "truck",
+        "background": "ef584a"
+    },
+    {
+        "id": "BD8510F6-6062-4CCD-B7EA-1B4315CF99B2",
+        "emoji": "📄",
+        "entity": "&#1F4C4;",
+        "code": ":page_facing_up:",
+        "description": "Add or update license.",
+        "name": "page-facing-up",
+        "background": "d9e3e8"
+    },
+    {
+        "id": "D5C1A9D8-958E-42C9-9448-DB22A847C2DB",
+        "emoji": "💥",
+        "entity": "&#x1f4a5;",
+        "code": ":boom:",
+        "description": "Introduce breaking changes.",
+        "name": "boom",
+        "background": "f94f28"
+    },
+    {
+        "id": "F24E9F1B-BA9D-4D27-92F0-20BFD1CB78C0",
+        "emoji": "🍱",
+        "entity": "&#1F371",
+        "code": ":bento:",
+        "description": "Add or update assets.",
+        "name": "bento",
+        "background": "ff5864"
+    },
+    {
+        "id": "7031052D-E5C4-4869-86D1-B44487367D9D",
+        "emoji": "♿️",
+        "entity": "&#9855;",
+        "code": ":wheelchair:",
+        "description": "Improve accessibility.",
+        "name": "wheelchair",
+        "background": "00b1fb"
+    },
+    {
+        "id": "9066F322-517B-4B1B-BA01-5BCA1FA7B606",
+        "emoji": "💡",
+        "entity": "&#128161;",
+        "code": ":bulb:",
+        "description": "Add or update comments in source code.",
+        "name": "bulb",
+        "background": "ffce49"
+    },
+    {
+        "id": "0E641D84-A7B9-403C-BE2F-620AF6701BA9",
+        "emoji": "🍻",
+        "entity": "&#x1f37b;",
+        "code": ":beers:",
+        "description": "Write code drunkenly.",
+        "name": "beers",
+        "background": "fbb64b"
+    },
+    {
+        "id": "92FB99C2-F9F8-4433-9811-78C22CCDE4ED",
+        "emoji": "💬",
+        "entity": "&#128172;",
+        "code": ":speech_balloon:",
+        "description": "Add or update text and literals.",
+        "name": "speech-balloon",
+        "background": "cedae6"
+    },
+    {
+        "id": "783DA1A3-43C2-444E-973F-71B9678BE867",
+        "emoji": "🗃",
+        "entity": "&#128451;",
+        "code": ":card_file_box:",
+        "description": "Perform database related changes.",
+        "name": "card-file-box",
+        "background": "c5e763"
+    },
+    {
+        "id": "E3D67178-82DD-48F7-A127-05475F6D52B3",
+        "emoji": "🔊",
+        "entity": "&#128266;",
+        "code": ":loud_sound:",
+        "description": "Add or update logs.",
+        "name": "loud-sound",
+        "background": "23b4d2"
+    },
+    {
+        "id": "88850DE1-F595-4C47-92CF-059609386268",
+        "emoji": "🔇",
+        "entity": "&#128263;",
+        "code": ":mute:",
+        "description": "Remove logs.",
+        "name": "mute",
+        "background": "e6ebef"
+    },
+    {
+        "id": "020676E5-C833-43B2-8B31-E5CAC0F3AC9A",
+        "emoji": "👥",
+        "entity": "&#128101;",
+        "code": ":busts_in_silhouette:",
+        "description": "Add or update contributor(s).",
+        "name": "busts-in-silhouette",
+        "background": "ffce49"
+    },
+    {
+        "id": "C034FBB2-1561-4405-AE3B-4189FF11220D",
+        "emoji": "🚸",
+        "entity": "&#128696;",
+        "code": ":children_crossing:",
+        "description": "Improve user experience / usability.",
+        "name": "children-crossing",
+        "background": "ffce49"
+    },
+    {
+        "id": "9C6DEA30-054A-499A-B6DB-8339C54DDC03",
+        "emoji": "🏗",
+        "entity": "&#1f3d7;",
+        "code": ":building_construction:",
+        "description": "Make architectural changes.",
+        "name": "building-construction",
+        "background": "ffe55f"
+    },
+    {
+        "id": "89EF7D3D-BE3F-4E63-A41A-FBC191A68026",
+        "emoji": "📱",
+        "entity": "&#128241;",
+        "code": ":iphone:",
+        "description": "Work on responsive design.",
+        "name": "iphone",
+        "background": "40c4ff"
+    },
+    {
+        "id": "A1FE1FEE-9BC3-482B-8B81-23761D25676A",
+        "emoji": "🤡",
+        "entity": "&#129313;",
+        "code": ":clown_face:",
+        "description": "Mock things.",
+        "name": "clown-face",
+        "background": "ff7281"
+    },
+    {
+        "id": "74BDAF07-EB74-4110-8A06-CA56A31C8A08",
+        "emoji": "🥚",
+        "entity": "&#129370;",
+        "code": ":egg:",
+        "description": "Add or update an easter egg.",
+        "name": "egg",
+        "background": "77e856"
+    },
+    {
+        "id": "DAE8A878-5F97-4176-ACD9-61B407B33F26",
+        "emoji": "🙈",
+        "entity": "&#8bdfe7;",
+        "code": ":see_no_evil:",
+        "description": "Add or update a .gitignore file.",
+        "name": "see-no-evil",
+        "background": "8bdfe7"
+    },
+    {
+        "id": "2242B9E3-BEF7-46DE-B615-D00533C7C745",
+        "emoji": "📸",
+        "entity": "&#128248;",
+        "code": ":camera_flash:",
+        "description": "Add or update snapshots.",
+        "name": "camera-flash",
+        "background": "00a9f0"
+    },
+    {
+        "id": "76DAE73B-E64B-493D-AAE6-5B844C7AB597",
+        "emoji": "⚗",
+        "entity": "&#128248;",
+        "code": ":alembic:",
+        "description": "Perform experiments.",
+        "name": "alembic",
+        "background": "7f39fb"
+    },
+    {
+        "id": "39EC8D31-1A70-48BA-94D5-CB44754F466C",
+        "emoji": "🔍",
+        "entity": "&#128269;",
+        "code": ":mag:",
+        "description": "Improve SEO.",
+        "name": "mag",
+        "background": "ffe55f"
+    },
+    {
+        "id": "2B2E584D-BD99-4DF8-9A04-5B899BEB0152",
+        "emoji": "🏷️",
+        "entity": "&#127991;",
+        "code": ":label:",
+        "description": "Add or update types.",
+        "name": "label",
+        "background": "cb63e6"
+    },
+    {
+        "id": "F1E245A6-05E1-42D0-A1B6-75297B6871E9",
+        "emoji": "🌱",
+        "entity": "&#127793;",
+        "code": ":seedling:",
+        "description": "Add or update seed files.",
+        "name": "seedling",
+        "background": "c5e763"
+    },
+    {
+        "id": "1D55751D-2F81-4BCC-9994-D3D97B3A5072",
+        "emoji": "🚩",
+        "entity": "&#x1F6A9;",
+        "code": ":triangular_flag_on_post:",
+        "description": "Add, update, or remove feature flags.",
+        "name": "triangular-flag-on-post",
+        "background": "ffce49"
+    },
+    {
+        "id": "AD526097-266A-440A-8A62-E973048DD8D4",
+        "emoji": "🥅",
+        "entity": "&#x1F945;",
+        "code": ":goal_net:",
+        "description": "Catch errors.",
+        "name": "goal-net",
+        "background": "c7cb12"
+    },
+    {
+        "id": "E9366018-C3EB-43E9-A51C-16AF961B3432",
+        "emoji": "💫",
+        "entity": "&#x1f4ab;",
+        "code": ":dizzy:",
+        "description": "Add or update animations and transitions.",
+        "name": "animation",
+        "background": "ffdb3a"
+    },
+    {
+        "id": "561E1985-B126-435C-A439-1DE8C2E7CF35",
+        "emoji": "🗑",
+        "entity": "&#x1F5D1;",
+        "code": ":wastebasket:",
+        "description": "Deprecate code that needs to be cleaned up.",
+        "name": "wastebasket",
+        "background": "d9e3e8"
+    }
+]
