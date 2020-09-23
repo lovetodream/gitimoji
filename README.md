@@ -10,7 +10,8 @@ This project provides an application for using [Gitmoji](https://github.com/carl
 
 ## Installation
 
-WIP
+You can find the latest stable Version of the App inside the [releases](https://github.com/TimoZacherl/gitimoji/releases/latest) tab.
+The attached binary on every release is signed and notarized by Apple. You can download it and move it inside your Applications folder. That's it! 🎉
 
 ## License
 
