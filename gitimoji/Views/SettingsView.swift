@@ -59,7 +59,7 @@ struct SettingsView: View {
             
             HStack {
                 Button(action: {
-                    if let url = URL(string: "") {
+                    if let url = URL(string: "https://gitmoji.carloscuesta.me/") {
                     NSWorkspace.shared.open(url)
                     }
                 }, label: {
@@ -69,7 +69,7 @@ struct SettingsView: View {
                 Spacer()
                 
                 Button(action: {
-                    if let url = URL(string: "") {
+                    if let url = URL(string: "https://github.com/TimoZacherl/gitimoji") {
                         NSWorkspace.shared.open(url)
                     }
                 }) {
