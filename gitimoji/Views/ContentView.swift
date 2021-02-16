@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @State private var searchText: String = ""
     @State private var showSettings: Bool = false
-    @State private var copyEmoji: Bool = false
+    @State private var copyEmoji: Bool = Defaults.getSettings()
     @State private var showAbout = false
     
     var body: some View {
@@ -25,7 +25,7 @@ struct ContentView: View {
         })
         
         let copyEmojiBinding = Binding( get: {
-            return Defaults.getSettings()
+            return self.copyEmoji
         }, set: {
             self.copyEmoji = $0
             Defaults.saveSettings(copyEmojiValue: $0)
