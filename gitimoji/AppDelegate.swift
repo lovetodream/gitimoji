@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import KeyboardShortcuts
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -31,6 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = self.statusBarItem.button {
             button.image = NSImage(named: "Icon")
             button.action = #selector(togglePopover(_:))
+        }
+        
+        KeyboardShortcuts.onKeyUp(for: .toggleApp) { [self] in
+            togglePopover(self)
         }
     }
     

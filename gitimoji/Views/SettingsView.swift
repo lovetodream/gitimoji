@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KeyboardShortcuts
 
 struct SettingsView: View {
     @ObservedObject var vm: SearchVM
@@ -31,6 +32,11 @@ struct SettingsView: View {
             Picker(selection: $copyEmojiBinding, label: Text("Value to copy")) {
                 Text("Emoji Code eg. :tada:").tag(false)
                 Text("Emoji eg. 🎉").tag(true)
+            }
+            HStack {
+                Text("Toggle App Window")
+                Spacer()
+                KeyboardShortcuts.Recorder(for: .toggleApp)
             }
             Toggle(isOn: $vm.autoLaunchEnabled) {
                 Text("Launch App automatically")

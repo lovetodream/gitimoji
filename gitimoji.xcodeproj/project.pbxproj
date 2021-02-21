@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		060A3EDF2518CE1A0040A44C /* GitimojiAutoLaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 06131F1B2518C9A6003159AA /* GitimojiAutoLaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0610A45E25E2EAD100B4E3D4 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 0610A45D25E2EAD100B4E3D4 /* KeyboardShortcuts */; };
+		0610A46425E2EB1600B4E3D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610A46325E2EB1600B4E3D4 /* Constants.swift */; };
 		06131F1E2518C9A6003159AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06131F1D2518C9A6003159AA /* AppDelegate.swift */; };
 		06131F222518C9B3003159AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06131F212518C9B3003159AA /* Assets.xcassets */; };
 		06131F252518C9B3003159AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06131F232518C9B3003159AA /* Main.storyboard */; };
@@ -43,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0610A46325E2EB1600B4E3D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		06131F1B2518C9A6003159AA /* GitimojiAutoLaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitimojiAutoLaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06131F1D2518C9A6003159AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06131F212518C9B3003159AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0610A45E25E2EAD100B4E3D4 /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +139,7 @@
 		0658287E2518D4CA000557C3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0610A46325E2EB1600B4E3D4 /* Constants.swift */,
 				06DEE0522516238C002D3605 /* DecodeHelper.swift */,
 				06DEE05825162E98002D3605 /* Pasteboard.swift */,
 				06DEE05525162C75002D3605 /* ColorExtension.swift */,
@@ -250,6 +255,7 @@
 			);
 			name = gitimoji;
 			packageProductDependencies = (
+				0610A45D25E2EAD100B4E3D4 /* KeyboardShortcuts */,
 			);
 			productName = gitimoji;
 			productReference = 06DEE03425161C6B002D3605 /* gitimoji.app */;
@@ -282,6 +288,7 @@
 			);
 			mainGroup = 06DEE02B25161C6B002D3605;
 			packageReferences = (
+				0610A45C25E2EAD100B4E3D4 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = 06DEE03525161C6B002D3605 /* Products */;
 			projectDirPath = "";
@@ -336,6 +343,7 @@
 				06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */,
 				0658289D2518E082000557C3 /* ActivityIndicator.swift in Sources */,
 				06DEE03825161C6B002D3605 /* AppDelegate.swift in Sources */,
+				0610A46425E2EB1600B4E3D4 /* Constants.swift in Sources */,
 				06DEE0502516236D002D3605 /* Gitmoji.swift in Sources */,
 				065828882518D61D000557C3 /* EmojiCodeButtonStyle.swift in Sources */,
 				06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */,
@@ -614,6 +622,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0610A45C25E2EAD100B4E3D4 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0610A45D25E2EAD100B4E3D4 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0610A45C25E2EAD100B4E3D4 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06DEE02C25161C6B002D3605 /* Project object */;
 }
