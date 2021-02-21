@@ -121,7 +121,7 @@
         "emoji": "🚨",
         "entity": "&#x1f6a8;",
         "code": ":rotating_light:",
-        "description": "Remove linter warnings.",
+        "description": "Fix compiler / linter warnings.",
         "name": "rotating-light",
         "background": "536dfe"
     },
@@ -229,7 +229,7 @@
         "emoji": "🔨",
         "entity": "&#128296;",
         "code": ":hammer:",
-        "description": "Add or update build scripts.",
+        "description": "Add or update development scripts.",
         "name": "hammer",
         "background": "ffc400"
     },
@@ -538,5 +538,32 @@
         "description": "Deprecate code that needs to be cleaned up.",
         "name": "wastebasket",
         "background": "d9e3e8"
+    },
+    {
+        "id": "94B4D151-6F4C-4408-9943-23E239CA1393",
+        "emoji": "🛂",
+        "entity": "&#x1F6C2;",
+        "code": ":passport_control:",
+        "description": "Work on code related to authorization, roles and permissions.",
+        "name": "passport-control",
+        "background": "4dc6dc"
+    },
+    {
+        "id": "9C01A8E7-08E4-4286-985C-494C8AC37635",
+        "emoji": "🩹",
+        "entity": "&#x1FA79;",
+        "code": ":adhesive_bandage:",
+        "description": "Simple fix for a non-critical issue.",
+        "name": "adhesive-bandage",
+        "background": "fbcfb7"
+    },
+    {
+        "id": "F57FAE80-427B-4BA4-836D-C58F7168DF08",
+        "emoji": "🧐",
+        "entity": "&#x1F9D0;",
+        "code": ":monocle_face:",
+        "description": "Data exploration/inspection.",
+        "name": "monocle-face",
+        "background": "ffe55f"
     }
 ]
