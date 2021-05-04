@@ -56,6 +56,7 @@ struct ContentView: View {
                                     } else {
                                         Button(action: {
                                             self.searchText = ""
+                                            self.vm.updateSearchText(width: "")
                                         }, label: {
                                             Image("DismissIcon")
                                                 .resizable()
