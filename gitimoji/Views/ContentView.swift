@@ -55,7 +55,7 @@ struct ContentView: View {
                                         })
                                     } else {
                                         Button(action: {
-                                            self.searchText = ""
+                                            searchTextBinding.wrappedValue = ""
                                         }, label: {
                                             Image("DismissIcon")
                                                 .resizable()
