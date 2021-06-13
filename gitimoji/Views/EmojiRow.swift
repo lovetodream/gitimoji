@@ -21,22 +21,22 @@ struct EmojiRow: View {
         }, label: {
             HStack {
                 Group {
-                    Text(gitmoji.emoji).font(.custom("Apple Color Emoji", size: 20)).padding(.vertical, -4)
-                    Text(gitmoji.description).padding(.vertical, 2)
+                    Text(gitmoji.emoji ?? "🥗").font(.custom("Apple Color Emoji", size: 20)).padding(.vertical, -4)
+                    Text(gitmoji.emojiDescription ?? "standard description").padding(.vertical, 2)
                 }
                 Spacer()
                 if recentlyCopied {
-                    Text("Copied").padding(.horizontal, 8).padding(.vertical, 2).background(Color(hex: gitmoji.background)).cornerRadius(5.0)
+                    Text("Copied").padding(.horizontal, 8).padding(.vertical, 2).background(Color(hex: "00e676")).cornerRadius(5.0)
                 }
             }
-        }).buttonStyle(EmojiCodeButtonStyle(hovering: self.hovering, background: Color(hex: gitmoji.background, opacity: 0.4), border: Color(hex: gitmoji.background)))
+        }).buttonStyle(EmojiCodeButtonStyle(hovering: self.hovering, background: Color(hex: "00e676", opacity: 0.4), border: Color(hex: "00e676")))
         .onHover { hovering in
             self.hovering = hovering
         }
     }
     
     func triggerRecentlyCopied() {
-        copyToPasteboard(text: copyEmoji ? gitmoji.emoji : gitmoji.code)
+        copyToPasteboard(text: copyEmoji ? gitmoji.emoji ?? "🥗" : gitmoji.code ?? ":salad:")
         recentlyCopied = true
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
             self.recentlyCopied = false
@@ -46,6 +46,6 @@ struct EmojiRow: View {
 
 struct EmojiRow_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiRow(gitmoji: Gitmoji(id: UUID(), emoji: "🐱", entity: ":cat:", code: ":cat:", description: "Cute cat", name: "Cat", background: "333"), copyEmoji: .constant(false))
+        EmojiRow(gitmoji: Gitmoji(), copyEmoji: .constant(false))
     }
 }

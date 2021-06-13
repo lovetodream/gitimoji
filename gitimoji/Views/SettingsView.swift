@@ -14,6 +14,7 @@ struct SettingsView: View {
     @Binding var copyEmojiBinding: Bool
     @Binding var showSettings: Bool
     @Binding var showAbout: Bool
+    @State var fetchSuccessful: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,6 +38,24 @@ struct SettingsView: View {
                 Text("Toggle App Window")
                 Spacer()
                 KeyboardShortcuts.Recorder(for: .toggleApp)
+            }
+            HStack {
+                Text("Fetch new gitmojis")
+                Spacer()
+                Button {
+                    if !vm.isFetching {
+                        fetchSuccessful = vm.refetchGitmojis()
+                    }
+                } label: {
+                    if vm.isFetching {
+                        Text("Fetching...")
+                    } else if fetchSuccessful {
+                        Text("✅ Success")
+                    } else {
+                        Text("Start fetch")
+                    }
+                }
+
             }
             Toggle(isOn: $vm.autoLaunchEnabled) {
                 Text("Launch App automatically")

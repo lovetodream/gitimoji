@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19141.11" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Gitmoji" representedClassName="Gitmoji" syncable="YES" codeGenerationType="class">
+        <attribute name="code" attributeType="String"/>
+        <attribute name="emoji" attributeType="String"/>
+        <attribute name="emojiDescription" attributeType="String"/>
+        <attribute name="emojiEntity" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="semver" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Gitmoji" positionX="-63" positionY="-18" width="128" height="119"/>
+    </elements>
+</model>
