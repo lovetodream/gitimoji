@@ -9,21 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var vm = SearchVM()
-    
-    @State private var searchText: String = ""
+
     @State private var showSettings: Bool = false
     @State private var copyEmoji: Bool = Defaults.getSettings()
     @State private var showAbout = false
     
     var body: some View {
-        let searchTextBinding = Binding( get: {
-            return self.searchText
-        }, set: {
-            self.searchText = $0
-            // search function here
-            self.vm.updateSearchText(width: $0)
-        })
-        
         let copyEmojiBinding = Binding( get: {
             return self.copyEmoji
         }, set: {
@@ -41,21 +32,21 @@ struct ContentView: View {
                             Text("🔍")
                                 .padding(.leading, 5)
                             
-                            TextField("Search...", text: searchTextBinding)
+                            TextField("Search...", text: $vm.searchText)
                                 .textFieldStyle(PlainTextFieldStyle())
                             
                             Group {
-                                if !searchText.isEmpty {
+                                if !vm.searchText.isEmpty {
                                     if vm.isLoading {
                                         Button(action: {
-                                            self.searchText = ""
+                                            self.vm.searchText = ""
                                         }, label: {
                                             ProgressIndicator()
                                                 .frame(width: 35, height: 35)
                                         })
                                     } else {
                                         Button(action: {
-                                            searchTextBinding.wrappedValue = ""
+                                            self.vm.searchText = ""
                                         }, label: {
                                             Image("DismissIcon")
                                                 .resizable()
@@ -70,6 +61,7 @@ struct ContentView: View {
                     }
                     
                     Button(action: {
+                        vm.fetchState = .stateless
                         self.showSettings.toggle()
                     }, label: {
                         Image("SettingsIcon")

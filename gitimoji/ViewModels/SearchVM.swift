@@ -14,7 +14,12 @@ class SearchVM: ObservableObject {
     @Published var searchResults = [Gitmoji]()
     @Published var autoLaunchEnabled: Bool = false
     @Published var isLoading: Bool = false
-    @Published var isFetching: Bool = false
+    @Published var fetchState: FetchState = .stateless
+    @Published var searchText: String = "" {
+        didSet {
+            updateSearchText(width: searchText)
+        }
+    }
     
     var allGitmojis = [Gitmoji]()
     let managedObjectContext = PersistenceController.shared.container.viewContext
@@ -26,14 +31,15 @@ class SearchVM: ObservableObject {
             $0.bundleIdentifier == helperBundleName
         }
         
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        
         do {
             self.allGitmojis = try managedObjectContext.fetch(fetchRequest)
+            self.searchResults = self.allGitmojis
             
             if self.allGitmojis.count == 0 {
-                let _ = refetchGitmojis()
+                refetchGitmojis()
             }
-            
-            self.searchResults = self.allGitmojis
         } catch let error as NSError {
             print("Could not fetch gitmojis. \(error), \(error.userInfo)")
         }
@@ -61,8 +67,21 @@ class SearchVM: ObservableObject {
         self.searchResults = allGitmojis.filter { $0.description.lowercased().contains(text) }
     }
     
-    public func refetchGitmojis() -> Bool {
-        isFetching = true
+    private func removeGitmojis() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Gitmoji")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedObjectContext.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    public func refetchGitmojis() {
+        self.fetchState = .loading
+        
+        self.removeGitmojis()
         
         fetchEmojis { gitmojis in
             gitmojis.forEach { gitmoji in
@@ -79,16 +98,28 @@ class SearchVM: ObservableObject {
             } catch let error as NSError {
                 print(error)
             }
+            
+            do {
+                let fetchRequest = NSFetchRequest<Gitmoji>(entityName: "Gitmoji")
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+                self.allGitmojis = try self.managedObjectContext.fetch(fetchRequest)
+                DispatchQueue.main.async {
+                    self.searchText = ""
+                }
+            } catch let error as NSError {
+                print(error)
+                DispatchQueue.main.async {
+                    self.fetchState = .error
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.fetchState = .success
+            }
         }
-        
-        do {
-            self.allGitmojis = try self.managedObjectContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print(error)
-            return false
-        }
-        
-        isFetching = false
-        return true
     }
+}
+
+enum FetchState {
+    case loading, success, error, stateless
 }

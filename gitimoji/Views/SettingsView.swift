@@ -43,19 +43,21 @@ struct SettingsView: View {
                 Text("Fetch new gitmojis")
                 Spacer()
                 Button {
-                    if !vm.isFetching {
-                        fetchSuccessful = vm.refetchGitmojis()
+                    if vm.fetchState != .loading {
+                        vm.refetchGitmojis()
                     }
                 } label: {
-                    if vm.isFetching {
-                        Text("Fetching...")
-                    } else if fetchSuccessful {
-                        Text("✅ Success")
-                    } else {
+                    switch vm.fetchState {
+                    case .stateless:
                         Text("Start fetch")
+                    case .loading:
+                        Text("Fetching...")
+                    case .success:
+                        Text("✅ Success")
+                    case .error:
+                        Text("🛑 Error occurred")
                     }
-                }
-
+                }.disabled(vm.fetchState == .loading)
             }
             Toggle(isOn: $vm.autoLaunchEnabled) {
                 Text("Launch App automatically")
