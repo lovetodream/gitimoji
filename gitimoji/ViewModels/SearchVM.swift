@@ -12,7 +12,11 @@ import ServiceManagement
 class SearchVM: ObservableObject {
     
     @Published var searchResults = [Gitmoji]()
-    @Published var autoLaunchEnabled: Bool = false
+    @Published var autoLaunchEnabled: Bool = false {
+        didSet {
+            toggleAutoLaunch(bool: autoLaunchEnabled)
+        }
+    }
     @Published var isLoading: Bool = false
     @Published var fetchState: FetchState = .stateless
     @Published var searchText: String = "" {
@@ -24,7 +28,7 @@ class SearchVM: ObservableObject {
     var allGitmojis = [Gitmoji]()
     let managedObjectContext = PersistenceController.shared.container.viewContext
     let fetchRequest: NSFetchRequest<Gitmoji> = Gitmoji.fetchRequest()
-    var helperBundleName = "com.timozacherl.GitmojiAutoLaunchHelper"
+    var helperBundleName = "com.timozacherl.GitimojiAutoLaunchHelper"
     
     init() {
         let foundHelper = NSWorkspace.shared.runningApplications.contains {
