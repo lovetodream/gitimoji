@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>gitimoji</title>
+        <language>en</language>
+
+        <item>
+            <title>Version 1.2.3</title>
+            <pubDate>Do, 16 Dez 2021 22:20:41 +0100</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://github.com/lovetodream/gitimoji/releases/tag/v1.2.3</sparkle:releaseNotesLink>
+            <enclosure
+                url="https://github.com/lovetodream/gitimoji/releases/download/v1.2.3/gitimoji.app.zip"
+                sparkle:version="1.2.3"
+                sparkle:shortVersionString="1.2.3"
+                type="application/octet-stream"/>
+        </item>
+    </channel>
+</rss>
