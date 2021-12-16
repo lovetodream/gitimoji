@@ -15,5 +15,17 @@
                 sparkle:shortVersionString="1.2.3"
                 type="application/octet-stream"/>
         </item>
+        
+        <item>
+            <title>Version 1.2.2</title>
+            <pubDate>Do, 16 Dez 2021 22:19:41 +0100</pubDate>
+            <sparkle:minimumSystemVersion>10.15</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://github.com/lovetodream/gitimoji/releases/tag/v1.2.2</sparkle:releaseNotesLink>
+            <enclosure
+                url="https://github.com/lovetodream/gitimoji/releases/download/v1.2.2/gitimoji.app.zip"
+                sparkle:version="1.2.2"
+                sparkle:shortVersionString="1.2.2"
+                type="application/octet-stream"/>
+        </item>
     </channel>
 </rss>
