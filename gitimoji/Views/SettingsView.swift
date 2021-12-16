@@ -9,7 +9,8 @@ import SwiftUI
 import KeyboardShortcuts
 
 struct SettingsView: View {
-    @ObservedObject var vm: SearchVM
+    @StateObject var vm: SearchVM
+    @StateObject var updaterViewModel = UpdaterViewModel()
     
     @Binding var copyEmojiBinding: Bool
     @Binding var showSettings: Bool
@@ -62,6 +63,12 @@ struct SettingsView: View {
             Toggle(isOn: $vm.autoLaunchEnabled) {
                 Text("Launch App automatically")
             }
+            Button {
+                updaterViewModel.checkForUpdates()
+            } label: {
+                Text("Check for updates...")
+            }
+            .disabled(!updaterViewModel.canCheckForUpdates)
             Button(action: {
                 self.showAbout.toggle()
             }, label: {

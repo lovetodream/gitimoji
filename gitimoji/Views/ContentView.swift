@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var vm = SearchVM()
+    @StateObject var vm = SearchVM()
 
     @State private var showSettings: Bool = false
     @State private var copyEmoji: Bool = Defaults.getSettings()

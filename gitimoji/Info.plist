@@ -30,5 +30,11 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/lovetodream/gitimoji/master/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>wBeZVvg7ZioK/KY0XJcYP7L2xC8Gn69norjC3lwIdBE=</string>
 </dict>
 </plist>

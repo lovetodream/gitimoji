@@ -9,6 +9,15 @@
           "revision": "f09de800a4f05d66fe2a9924c81a932454a9f39a",
           "version": "0.7.1"
         }
+      },
+      {
+        "package": "Sparkle",
+        "repositoryURL": "https://github.com/sparkle-project/Sparkle",
+        "state": {
+          "branch": null,
+          "revision": "2195ee0883efc92828a0cf33b830f43f9bd7e01b",
+          "version": "2.0.0-rc.1"
+        }
       }
     ]
   },

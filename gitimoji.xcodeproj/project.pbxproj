@@ -18,6 +18,8 @@
 		0658288F2518D696000557C3 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658288E2518D696000557C3 /* EmojiRow.swift */; };
 		0658289D2518E082000557C3 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658289C2518E082000557C3 /* ActivityIndicator.swift */; };
 		06767C2F25164CF0006BF915 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06767C2E25164CF0006BF915 /* Defaults.swift */; };
+		069B9931276BC7AB00929ED9 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 069B9930276BC7AB00929ED9 /* Sparkle */; };
+		069B9933276BC80700929ED9 /* UpdaterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B9932276BC80700929ED9 /* UpdaterVM.swift */; };
 		06C7402A251A6687000B6E0A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C74029251A6687000B6E0A /* SettingsView.swift */; };
 		06DEE03825161C6B002D3605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE03725161C6B002D3605 /* AppDelegate.swift */; };
 		06DEE03A25161C6B002D3605 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE03925161C6B002D3605 /* ContentView.swift */; };
@@ -57,6 +59,9 @@
 		0658288E2518D696000557C3 /* EmojiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRow.swift; sourceTree = "<group>"; };
 		0658289C2518E082000557C3 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		06767C2E25164CF0006BF915 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		069B9932276BC80700929ED9 /* UpdaterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterVM.swift; sourceTree = "<group>"; };
+		069B9935276BD12500929ED9 /* appcast.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = appcast.sh; sourceTree = "<group>"; };
+		069B9936276BDF7300929ED9 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		06C74029251A6687000B6E0A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		06DEE03425161C6B002D3605 /* gitimoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gitimoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DEE03725161C6B002D3605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0610A45E25E2EAD100B4E3D4 /* KeyboardShortcuts in Frameworks */,
+				069B9931276BC7AB00929ED9 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				06DEE05B2516372F002D3605 /* SearchVM.swift */,
+				069B9932276BC80700929ED9 /* UpdaterVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -157,9 +164,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		069B9934276BD10E00929ED9 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				069B9935276BD12500929ED9 /* appcast.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 		06DEE02B25161C6B002D3605 = {
 			isa = PBXGroup;
 			children = (
+				069B9936276BDF7300929ED9 /* appcast.xml */,
+				069B9934276BD10E00929ED9 /* scripts */,
 				06DEE03625161C6B002D3605 /* gitimoji */,
 				06131F1C2518C9A6003159AA /* GitimojiAutoLaunchHelper */,
 				06DEE03525161C6B002D3605 /* Products */,
@@ -240,6 +257,7 @@
 			name = gitimoji;
 			packageProductDependencies = (
 				0610A45D25E2EAD100B4E3D4 /* KeyboardShortcuts */,
+				069B9930276BC7AB00929ED9 /* Sparkle */,
 			);
 			productName = gitimoji;
 			productReference = 06DEE03425161C6B002D3605 /* gitimoji.app */;
@@ -273,6 +291,7 @@
 			mainGroup = 06DEE02B25161C6B002D3605;
 			packageReferences = (
 				0610A45C25E2EAD100B4E3D4 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				069B992F276BC7AB00929ED9 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 06DEE03525161C6B002D3605 /* Products */;
 			projectDirPath = "";
@@ -319,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069B9933276BC80700929ED9 /* UpdaterVM.swift in Sources */,
 				06DEE03A25161C6B002D3605 /* ContentView.swift in Sources */,
 				0643B0E426765D8600358B31 /* Persistence.swift in Sources */,
 				06767C2F25164CF0006BF915 /* Defaults.swift in Sources */,
@@ -374,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -399,7 +419,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -459,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -514,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -542,7 +562,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.gitimoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -570,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.gitimoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -620,6 +640,14 @@
 				minimumVersion = 0.7.1;
 			};
 		};
+		069B992F276BC7AB00929ED9 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-rc.1";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -627,6 +655,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0610A45C25E2EAD100B4E3D4 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		069B9930276BC7AB00929ED9 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 069B992F276BC7AB00929ED9 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 
