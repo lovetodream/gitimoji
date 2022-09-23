@@ -8,21 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = SearchVM()
+    @StateObject private var vm = SearchVM()
 
     @State private var showSettings: Bool = false
-    @State private var copyEmoji: Bool = Defaults.getSettings()
     @State private var showAbout = false
     
     var body: some View {
-        let copyEmojiBinding = Binding( get: {
-            return self.copyEmoji
-        }, set: {
-            self.copyEmoji = $0
-            Defaults.saveSettings(copyEmojiValue: $0)
-        })
-        
-        return VStack {
+        VStack {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
                     ZStack {
@@ -72,11 +64,11 @@ struct ContentView: View {
                     .buttonStyle(PlainButtonStyle())
                 }.padding(.bottom, 10)
                 if showSettings {
-                    SettingsView(vm: vm, copyEmojiBinding: copyEmojiBinding, showSettings: $showSettings, showAbout: $showAbout)
+                    SettingsView(vm: vm, showSettings: $showSettings, showAbout: $showAbout)
                 }
                 ScrollView {
                     ForEach(vm.searchResults) { gitmoji in
-                        EmojiRow(gitmoji: gitmoji, copyEmoji: self.$copyEmoji)
+                        EmojiRow(gitmoji: gitmoji)
                     }
                 }
             }
