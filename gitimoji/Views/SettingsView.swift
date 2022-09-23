@@ -9,13 +9,16 @@ import SwiftUI
 import KeyboardShortcuts
 
 struct SettingsView: View {
-    @StateObject var vm: SearchVM
-    @StateObject var updaterViewModel = UpdaterViewModel()
-    
-    @Binding var copyEmojiBinding: Bool
+    @ObservedObject var vm: SearchVM
+
+    @StateObject private var updaterViewModel = UpdaterViewModel()
+
     @Binding var showSettings: Bool
     @Binding var showAbout: Bool
-    @State var fetchSuccessful: Bool = false
+
+    @State private var fetchSuccessful: Bool = false
+
+    @AppStorage("copyEmoji") private var copyEmoji = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,7 +34,7 @@ struct SettingsView: View {
                         .frame(width: 16, height: 16)
                 }).buttonStyle(PlainButtonStyle())
             }
-            Picker(selection: $copyEmojiBinding, label: Text("Value to copy")) {
+            Picker(selection: $copyEmoji, label: Text("Value to copy")) {
                 Text("Emoji Code eg. :tada:").tag(false)
                 Text("Emoji eg. 🎉").tag(true)
             }
@@ -119,7 +122,9 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(vm: SearchVM(), copyEmojiBinding: .constant(false), showSettings: .constant(true), showAbout: .constant(true))
+        SettingsView(vm: SearchVM(),
+                     showSettings: .constant(true),
+                     showAbout: .constant(true))
             .frame(width: 350)
     }
 }

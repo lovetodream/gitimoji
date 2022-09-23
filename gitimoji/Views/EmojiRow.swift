@@ -12,7 +12,8 @@ struct EmojiRow: View {
     
     @State private var hovering = false
     @State private var recentlyCopied = false
-    @Binding var copyEmoji: Bool
+
+    @AppStorage("copyEmoji") private var copyEmoji = false
     
     var body: some View {
         Button(action: {
@@ -57,6 +58,6 @@ struct EmojiRow: View {
 
 struct EmojiRow_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiRow(gitmoji: Gitmoji(), copyEmoji: .constant(false))
+        EmojiRow(gitmoji: Gitmoji())
     }
 }
