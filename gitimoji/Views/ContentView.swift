@@ -22,69 +22,32 @@ struct ContentView: View {
 
     @State private var showSettings = false
     @State private var showAbout = false
-    
+
     var body: some View {
-        VStack {
-            VStack(alignment: .leading, spacing: 0) {
-                HStack {
-                    ZStack {
-                        Color(NSColor.controlBackgroundColor).frame(height: 22).cornerRadius(6)
-                        
-                        HStack {
-                            Text("🔍")
-                                .padding(.leading, 5)
-                            
-                            TextField("Search...", text: $searchText)
-                                .textFieldStyle(PlainTextFieldStyle())
-                            
-                            if !searchText.isEmpty {
-                                Button {
-                                    searchText = ""
-                                } label: {
-                                    Image("DismissIcon")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .foregroundColor(.gray)
-                                        .frame(width: 16, height: 16)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.trailing, 5)
-                            }
-                        }
-                    }
-                    
-                    Button {
-                        showSettings.toggle()
-                    } label: {
-                        Image("SettingsIcon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 16, height: 16)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }.padding(.bottom, 10)
-                if showSettings {
-                    SettingsView(showSettings: $showSettings, showAbout: $showAbout)
-                }
-                ScrollView {
+        VStack(alignment: .leading, spacing: 0) {
+            GMSearchField(searchText: $searchText)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
                     ForEach(searchResults) { gitmoji in
                         EmojiRow(gitmoji: gitmoji)
                     }
                 }
+                .padding(.top, 9)
             }
-            .padding(.horizontal).padding(.top)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            VStack {
-                Divider()
-                Button(action: {
+            Divider()
+            HStack {
+                Button("Settings") {
+                    NSApp.sendAction(#selector(AppDelegate.openPreferencesWindow), to: nil, from: nil)
+                }
+                Spacer()
+                Button("Quit Gitimoji") {
                     NSApplication.shared.terminate(self)
-                }, label: {
-                    Text("Quit Gitimoji")
-                }).buttonStyle(BorderlessButtonStyle())
-                .padding(.bottom, 5)
-            }.padding(.vertical, 5)
+                }
+            }
+            .padding(.top, 9)
         }
+        .buttonStyle(.plain)
+        .padding()
     }
 }
 
@@ -93,12 +56,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             
-    }
-}
-
-extension NSTextField {
-    open override var focusRingType: NSFocusRingType {
-        get { .none }
-        set { }
     }
 }

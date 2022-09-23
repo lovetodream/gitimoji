@@ -12,6 +12,22 @@ extension KeyboardShortcuts.Name {
     static let toggleApp = Self("toggleApp")
 }
 
-struct Constants {
+enum Constants {
     static let helperBundleIdentifier = "com.timozacherl.GitimojiAutoLaunchHelper"
+
+    enum Link {
+        static let repository: URL = {
+            guard let url = URL(string: "https://github.com/lovetodream/gitimoji") else {
+                preconditionFailure("Repository URL invalid")
+            }
+            return url
+        }()
+
+        static let gitmoji: URL = {
+            guard let url = URL(string: "https://gitmoji.dev/") else {
+                preconditionFailure("Gitmoji URL invalid")
+            }
+            return url
+        }()
+    }
 }

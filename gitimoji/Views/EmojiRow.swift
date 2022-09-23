@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmojiRow: View {
     var gitmoji: Gitmoji
-    
+
     @State private var hovering = false
     @State private var recentlyCopied = false
 
@@ -40,7 +40,6 @@ struct EmojiRow: View {
             }
         })
         .buttonStyle(EmojiCodeButtonStyle(hovering: self.hovering,
-                                          background: Color.accentColor.opacity(0.4),
                                           border: Color.accentColor))
         .onHover { hovering in
             self.hovering = hovering
@@ -49,9 +48,13 @@ struct EmojiRow: View {
     
     func triggerRecentlyCopied() {
         copyToPasteboard(text: copyEmoji ? gitmoji.emoji ?? "🥗" : gitmoji.code ?? ":salad:")
-        recentlyCopied = true
+        withAnimation {
+            recentlyCopied = true
+        }
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
-            self.recentlyCopied = false
+            withAnimation {
+                self.recentlyCopied = false
+            }
         }
     }
 }
