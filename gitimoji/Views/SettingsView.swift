@@ -7,17 +7,16 @@
 
 import SwiftUI
 import KeyboardShortcuts
+import ServiceManagement
 
 struct SettingsView: View {
-    @ObservedObject var vm: SearchVM
-
     @StateObject private var updater = Updater()
     @StateObject private var fetcher = GitmojiFetcher()
 
     @Binding var showSettings: Bool
     @Binding var showAbout: Bool
 
-    @State private var fetchSuccessful: Bool = false
+    @State private var autoLaunchEnabled = false
 
     @AppStorage("copyEmoji") private var copyEmoji = false
 
@@ -69,7 +68,7 @@ struct SettingsView: View {
                 }
                 .disabled(fetcher.state == .loading)
             }
-            Toggle(isOn: $vm.autoLaunchEnabled) {
+            Toggle(isOn: $autoLaunchEnabled) {
                 Text("Launch App automatically")
             }
             Button {
@@ -123,13 +122,20 @@ struct SettingsView: View {
         .padding(10)
         .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black.opacity(0.1), lineWidth: 2.0))
         .cornerRadius(10.0)
+        .onAppear {
+            autoLaunchEnabled = NSWorkspace.shared.runningApplications.contains {
+                $0.bundleIdentifier == Constants.helperBundleIdentifier
+            }
+        }
+        .onChange(of: autoLaunchEnabled) { newValue in
+            SMLoginItemSetEnabled(Constants.helperBundleIdentifier as CFString, newValue)
+        }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(vm: SearchVM(),
-                     showSettings: .constant(true),
+        SettingsView(showSettings: .constant(true),
                      showAbout: .constant(true))
             .frame(width: 350)
     }

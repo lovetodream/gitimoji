@@ -13,5 +13,5 @@ extension KeyboardShortcuts.Name {
 }
 
 struct Constants {
-    static let helperBundleName = "com.timozacherl.GitimojiAutoLaunchHelper"
+    static let helperBundleIdentifier = "com.timozacherl.GitimojiAutoLaunchHelper"
 }

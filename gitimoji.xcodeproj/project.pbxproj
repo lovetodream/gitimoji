@@ -31,7 +31,6 @@
 		06DEE03F25161C6D002D3605 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE03E25161C6D002D3605 /* Preview Assets.xcassets */; };
 		06DEE04225161C6D002D3605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE04025161C6D002D3605 /* Main.storyboard */; };
 		06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05825162E98002D3605 /* Pasteboard.swift */; };
-		06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05B2516372F002D3605 /* SearchVM.swift */; };
 		06EAB16226764DA500B91BCE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB16126764DA500B91BCE /* Networking.swift */; };
 		06EAB16526765BD500B91BCE /* gitimoji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB16326765BD500B91BCE /* gitimoji.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -79,7 +78,6 @@
 		06DEE04325161C6D002D3605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06DEE04425161C6D002D3605 /* gitimoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gitimoji.entitlements; sourceTree = "<group>"; };
 		06DEE05825162E98002D3605 /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
-		06DEE05B2516372F002D3605 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		06EAB16126764DA500B91BCE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		06EAB16426765BD500B91BCE /* gitimoji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gitimoji.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,14 +112,6 @@
 				06131F272518C9B3003159AA /* GitimojiAutoLaunchHelper.entitlements */,
 			);
 			path = GitimojiAutoLaunchHelper;
-			sourceTree = "<group>";
-		};
-		065828782518D43D000557C3 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				06DEE05B2516372F002D3605 /* SearchVM.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0658287E2518D4CA000557C3 /* Helpers */ = {
@@ -217,7 +207,6 @@
 				065828862518D604000557C3 /* ViewHelpers */,
 				065828812518D599000557C3 /* Views */,
 				0658287E2518D4CA000557C3 /* Helpers */,
-				065828782518D43D000557C3 /* ViewModels */,
 				06DEE03725161C6B002D3605 /* AppDelegate.swift */,
 				0610A46325E2EB1600B4E3D4 /* Constants.swift */,
 				06DEE03B25161C6D002D3605 /* Assets.xcassets */,
@@ -369,7 +358,6 @@
 				0610A46425E2EB1600B4E3D4 /* Constants.swift in Sources */,
 				0698525B28DE1E0A00AA42F5 /* Searcher.swift in Sources */,
 				065828882518D61D000557C3 /* EmojiCodeButtonStyle.swift in Sources */,
-				06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */,
 				06EAB16526765BD500B91BCE /* gitimoji.xcdatamodeld in Sources */,
 				0658288F2518D696000557C3 /* EmojiRow.swift in Sources */,
 				06EAB16226764DA500B91BCE /* Networking.swift in Sources */,
