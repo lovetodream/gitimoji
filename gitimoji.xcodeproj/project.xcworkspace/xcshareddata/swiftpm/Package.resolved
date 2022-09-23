@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "KeyboardShortcuts",
-        "repositoryURL": "https://github.com/sindresorhus/KeyboardShortcuts",
-        "state": {
-          "branch": null,
-          "revision": "f09de800a4f05d66fe2a9924c81a932454a9f39a",
-          "version": "0.7.1"
-        }
-      },
-      {
-        "package": "Sparkle",
-        "repositoryURL": "https://github.com/sparkle-project/Sparkle",
-        "state": {
-          "branch": null,
-          "revision": "2195ee0883efc92828a0cf33b830f43f9bd7e01b",
-          "version": "2.0.0-rc.1"
-        }
+  "pins" : [
+    {
+      "identity" : "keyboardshortcuts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/KeyboardShortcuts",
+      "state" : {
+        "revision" : "5e674337c13f9d0f8ff72d9d39ded08ce9bb7e34",
+        "version" : "1.7.2"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "sparkle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparkle-project/Sparkle",
+      "state" : {
+        "revision" : "8e27997de02457a0c4690ffcfb8ac9c8e1066883",
+        "version" : "2.2.2"
+      }
+    }
+  ],
+  "version" : 2
 }
