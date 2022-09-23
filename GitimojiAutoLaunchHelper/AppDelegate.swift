@@ -16,13 +16,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let isRunning = runningApps.contains {
             $0.bundleIdentifier == "com.timozacherl.gitimoji"
         }
-        
+
         if !isRunning {
-            var path = Bundle.main.bundlePath as NSString
+            var url = Bundle.main.bundleURL
+            print(url)
             for _ in 1...4 {
-                path = path.deletingLastPathComponent as NSString
+                url = url.deletingLastPathComponent()
             }
-            NSWorkspace.shared.launchApplication(path as String)
+            let configuration = NSWorkspace.OpenConfiguration()
+            NSWorkspace.shared.openApplication(at: url, configuration: .init())
         }
     }
 
