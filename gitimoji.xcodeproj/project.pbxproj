@@ -26,7 +26,6 @@
 		06DEE03C25161C6D002D3605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE03B25161C6D002D3605 /* Assets.xcassets */; };
 		06DEE03F25161C6D002D3605 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE03E25161C6D002D3605 /* Preview Assets.xcassets */; };
 		06DEE04225161C6D002D3605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE04025161C6D002D3605 /* Main.storyboard */; };
-		06DEE05625162C75002D3605 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05525162C75002D3605 /* ColorExtension.swift */; };
 		06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05825162E98002D3605 /* Pasteboard.swift */; };
 		06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05B2516372F002D3605 /* SearchVM.swift */; };
 		06EAB16226764DA500B91BCE /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB16126764DA500B91BCE /* DataFetch.swift */; };
@@ -71,7 +70,6 @@
 		06DEE04125161C6D002D3605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06DEE04325161C6D002D3605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06DEE04425161C6D002D3605 /* gitimoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gitimoji.entitlements; sourceTree = "<group>"; };
-		06DEE05525162C75002D3605 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		06DEE05825162E98002D3605 /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 		06DEE05B2516372F002D3605 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		06EAB16126764DA500B91BCE /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			children = (
 				0610A46325E2EB1600B4E3D4 /* Constants.swift */,
 				06DEE05825162E98002D3605 /* Pasteboard.swift */,
-				06DEE05525162C75002D3605 /* ColorExtension.swift */,
 				065828792518D472000557C3 /* UserDefaults */,
 			);
 			path = Helpers;
@@ -352,7 +349,6 @@
 				06EAB16526765BD500B91BCE /* gitimoji.xcdatamodeld in Sources */,
 				0658288F2518D696000557C3 /* EmojiRow.swift in Sources */,
 				06EAB16226764DA500B91BCE /* DataFetch.swift in Sources */,
-				06DEE05625162C75002D3605 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
