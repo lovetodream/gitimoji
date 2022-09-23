@@ -70,10 +70,25 @@ class SearchVM: ObservableObject {
     public func getSearchResults(forText text: String) {
         self.searchResults = allGitmojis.filter { emoji in
             let searchMatcher = SmartSearchMatcher(searchString: searchText.lowercased())
-            if let code = emoji.code, let emojiDescription = emoji.emojiDescription {
-                return searchMatcher.matches(emojiDescription.lowercased()) || searchMatcher.matches(code.lowercased())
+
+            guard var code = emoji.code, let emojiDescription = emoji.emojiDescription else {
+                return false
             }
-            return false
+
+            let matchesCode = searchMatcher.matches(code.lowercased())
+            let matchesDescription = searchMatcher.matches(emojiDescription.lowercased())
+            code.removeFirst()
+            code.removeLast()
+            let matchesCodeWithoutDoubleDots = searchMatcher.matches(code.lowercased())
+            // Maybe put this if let in the first statement
+            let matchesEmoji: Bool
+            if let emoji = emoji.emoji {
+                matchesEmoji = searchMatcher.matches(emoji)
+            } else {
+                matchesEmoji = false
+            }
+
+            return matchesDescription || matchesCode || matchesCodeWithoutDoubleDots || matchesEmoji
         }
     }
     
