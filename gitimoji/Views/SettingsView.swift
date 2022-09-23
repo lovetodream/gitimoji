@@ -11,7 +11,7 @@ import KeyboardShortcuts
 struct SettingsView: View {
     @ObservedObject var vm: SearchVM
 
-    @StateObject private var updaterViewModel = UpdaterViewModel()
+    @StateObject private var updater = Updater()
 
     @Binding var showSettings: Bool
     @Binding var showAbout: Bool
@@ -67,11 +67,11 @@ struct SettingsView: View {
                 Text("Launch App automatically")
             }
             Button {
-                updaterViewModel.checkForUpdates()
+                updater.checkForUpdates()
             } label: {
                 Text("Check for updates...")
             }
-            .disabled(!updaterViewModel.canCheckForUpdates)
+            .disabled(!updater.canCheckForUpdates)
             Button(action: {
                 self.showAbout.toggle()
             }, label: {
