@@ -56,7 +56,6 @@ struct ContentView: View {
                     }
                     
                     Button {
-                        vm.fetchState = .stateless
                         showSettings.toggle()
                     } label: {
                         Image("SettingsIcon")

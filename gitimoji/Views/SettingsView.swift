@@ -12,6 +12,7 @@ struct SettingsView: View {
     @ObservedObject var vm: SearchVM
 
     @StateObject private var updater = Updater()
+    @StateObject private var fetcher = GitmojiFetcher()
 
     @Binding var showSettings: Bool
     @Binding var showAbout: Bool
@@ -19,6 +20,8 @@ struct SettingsView: View {
     @State private var fetchSuccessful: Bool = false
 
     @AppStorage("copyEmoji") private var copyEmoji = false
+
+    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -47,11 +50,13 @@ struct SettingsView: View {
                 Text("Fetch new gitmojis")
                 Spacer()
                 Button {
-                    if vm.fetchState != .loading {
-                        vm.refetchGitmojis()
+                    if fetcher.state != .loading {
+                        Task {
+                            await fetcher.refetch(on: viewContext)
+                        }
                     }
                 } label: {
-                    switch vm.fetchState {
+                    switch fetcher.state {
                     case .stateless:
                         Text("Start fetch")
                     case .loading:
@@ -61,7 +66,8 @@ struct SettingsView: View {
                     case .error:
                         Text("🛑 Error occurred")
                     }
-                }.disabled(vm.fetchState == .loading)
+                }
+                .disabled(fetcher.state == .loading)
             }
             Toggle(isOn: $vm.autoLaunchEnabled) {
                 Text("Launch App automatically")

@@ -20,6 +20,8 @@
 		0698525B28DE1E0A00AA42F5 /* Searcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698525A28DE1E0A00AA42F5 /* Searcher.swift */; };
 		0698525D28DE1E1E00AA42F5 /* SmartSearchMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698525C28DE1E1E00AA42F5 /* SmartSearchMatcher.swift */; };
 		0698526028DE1E5700AA42F5 /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698525F28DE1E5700AA42F5 /* FetchState.swift */; };
+		0698526228DE227300AA42F5 /* GitmojiFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698526128DE227300AA42F5 /* GitmojiFetcher.swift */; };
+		0698526428DE26F000AA42F5 /* NSManagedObjectContext+executeAndMergeChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0698526328DE26F000AA42F5 /* NSManagedObjectContext+executeAndMergeChanges.swift */; };
 		069B9931276BC7AB00929ED9 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 069B9930276BC7AB00929ED9 /* Sparkle */; };
 		069B9933276BC80700929ED9 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B9932276BC80700929ED9 /* Updater.swift */; };
 		06C7402A251A6687000B6E0A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C74029251A6687000B6E0A /* SettingsView.swift */; };
@@ -30,7 +32,7 @@
 		06DEE04225161C6D002D3605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DEE04025161C6D002D3605 /* Main.storyboard */; };
 		06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05825162E98002D3605 /* Pasteboard.swift */; };
 		06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DEE05B2516372F002D3605 /* SearchVM.swift */; };
-		06EAB16226764DA500B91BCE /* DataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB16126764DA500B91BCE /* DataFetch.swift */; };
+		06EAB16226764DA500B91BCE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB16126764DA500B91BCE /* Networking.swift */; };
 		06EAB16526765BD500B91BCE /* gitimoji.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06EAB16326765BD500B91BCE /* gitimoji.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		0698525A28DE1E0A00AA42F5 /* Searcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searcher.swift; sourceTree = "<group>"; };
 		0698525C28DE1E1E00AA42F5 /* SmartSearchMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartSearchMatcher.swift; sourceTree = "<group>"; };
 		0698525F28DE1E5700AA42F5 /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
+		0698526128DE227300AA42F5 /* GitmojiFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitmojiFetcher.swift; sourceTree = "<group>"; };
+		0698526328DE26F000AA42F5 /* NSManagedObjectContext+executeAndMergeChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+executeAndMergeChanges.swift"; sourceTree = "<group>"; };
 		069B9932276BC80700929ED9 /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		069B9935276BD12500929ED9 /* appcast.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = appcast.sh; sourceTree = "<group>"; };
 		069B9936276BDF7300929ED9 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 		06DEE04425161C6D002D3605 /* gitimoji.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gitimoji.entitlements; sourceTree = "<group>"; };
 		06DEE05825162E98002D3605 /* Pasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasteboard.swift; sourceTree = "<group>"; };
 		06DEE05B2516372F002D3605 /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
-		06EAB16126764DA500B91BCE /* DataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetch.swift; sourceTree = "<group>"; };
+		06EAB16126764DA500B91BCE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		06EAB16426765BD500B91BCE /* gitimoji.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gitimoji.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +127,8 @@
 		0658287E2518D4CA000557C3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				0610A46325E2EB1600B4E3D4 /* Constants.swift */,
 				06DEE05825162E98002D3605 /* Pasteboard.swift */,
+				0698526328DE26F000AA42F5 /* NSManagedObjectContext+executeAndMergeChanges.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -161,6 +165,9 @@
 				0698525C28DE1E1E00AA42F5 /* SmartSearchMatcher.swift */,
 				0698525A28DE1E0A00AA42F5 /* Searcher.swift */,
 				069B9932276BC80700929ED9 /* Updater.swift */,
+				06EAB16126764DA500B91BCE /* Networking.swift */,
+				0698526128DE227300AA42F5 /* GitmojiFetcher.swift */,
+				0643B0E326765D8600358B31 /* Persistence.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,14 +219,13 @@
 				0658287E2518D4CA000557C3 /* Helpers */,
 				065828782518D43D000557C3 /* ViewModels */,
 				06DEE03725161C6B002D3605 /* AppDelegate.swift */,
+				0610A46325E2EB1600B4E3D4 /* Constants.swift */,
 				06DEE03B25161C6D002D3605 /* Assets.xcassets */,
 				06DEE04025161C6D002D3605 /* Main.storyboard */,
 				06DEE04325161C6D002D3605 /* Info.plist */,
 				06DEE04425161C6D002D3605 /* gitimoji.entitlements */,
 				06DEE03D25161C6D002D3605 /* Preview Content */,
-				06EAB16126764DA500B91BCE /* DataFetch.swift */,
 				06EAB16326765BD500B91BCE /* gitimoji.xcdatamodeld */,
-				0643B0E326765D8600358B31 /* Persistence.swift */,
 			);
 			path = gitimoji;
 			sourceTree = "<group>";
@@ -349,11 +355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0698526228DE227300AA42F5 /* GitmojiFetcher.swift in Sources */,
 				069B9933276BC80700929ED9 /* Updater.swift in Sources */,
 				06DEE03A25161C6B002D3605 /* ContentView.swift in Sources */,
 				0698525D28DE1E1E00AA42F5 /* SmartSearchMatcher.swift in Sources */,
 				0643B0E426765D8600358B31 /* Persistence.swift in Sources */,
 				06C7402A251A6687000B6E0A /* SettingsView.swift in Sources */,
+				0698526428DE26F000AA42F5 /* NSManagedObjectContext+executeAndMergeChanges.swift in Sources */,
 				06DEE05925162E98002D3605 /* Pasteboard.swift in Sources */,
 				0698526028DE1E5700AA42F5 /* FetchState.swift in Sources */,
 				0658289D2518E082000557C3 /* ActivityIndicator.swift in Sources */,
@@ -364,7 +372,7 @@
 				06DEE05C2516372F002D3605 /* SearchVM.swift in Sources */,
 				06EAB16526765BD500B91BCE /* gitimoji.xcdatamodeld in Sources */,
 				0658288F2518D696000557C3 /* EmojiRow.swift in Sources */,
-				06EAB16226764DA500B91BCE /* DataFetch.swift in Sources */,
+				06EAB16226764DA500B91BCE /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +414,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -431,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -491,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -546,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -575,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.gitimoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -605,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.gitimoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
