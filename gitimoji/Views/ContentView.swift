@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Gitmoji.name, ascending: true)])
+    private var gitmojis: FetchedResults<Gitmoji>
+
+    @State private var searchText = ""
+
+    private var searchResults: [Gitmoji] {
+        if searchText.count > 0 {
+            return Searcher.getResults(forText: searchText, on: gitmojis)
+        }
+        return Array(gitmojis)
+    }
+
     @StateObject private var vm = SearchVM()
 
     @State private var showSettings: Bool = false
@@ -24,50 +36,41 @@ struct ContentView: View {
                             Text("🔍")
                                 .padding(.leading, 5)
                             
-                            TextField("Search...", text: $vm.searchText)
+                            TextField("Search...", text: $searchText)
                                 .textFieldStyle(PlainTextFieldStyle())
                             
-                            Group {
-                                if !vm.searchText.isEmpty {
-                                    if vm.isLoading {
-                                        Button(action: {
-                                            self.vm.searchText = ""
-                                        }, label: {
-                                            ProgressIndicator()
-                                                .frame(width: 35, height: 35)
-                                        })
-                                    } else {
-                                        Button(action: {
-                                            self.vm.searchText = ""
-                                        }, label: {
-                                            Image("DismissIcon")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .foregroundColor(.gray)
-                                                .frame(width: 16, height: 16)
-                                        }).buttonStyle(PlainButtonStyle())
-                                    }
+                            if !searchText.isEmpty {
+                                Button {
+                                    searchText = ""
+                                } label: {
+                                    Image("DismissIcon")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .foregroundColor(.gray)
+                                        .frame(width: 16, height: 16)
                                 }
-                            }.padding(.trailing, 5)
+                                .buttonStyle(PlainButtonStyle())
+                                .padding(.trailing, 5)
+                            }
                         }
                     }
                     
-                    Button(action: {
+                    Button {
                         vm.fetchState = .stateless
-                        self.showSettings.toggle()
-                    }, label: {
+                        showSettings.toggle()
+                    } label: {
                         Image("SettingsIcon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 16, height: 16)
-                    })
+                    }
                     .buttonStyle(PlainButtonStyle())
                 }.padding(.bottom, 10)
                 if showSettings {
                     SettingsView(vm: vm, showSettings: $showSettings, showAbout: $showAbout)
                 }
                 ScrollView {
-                    ForEach(vm.searchResults) { gitmoji in
+                    ForEach(searchResults) { gitmoji in
                         EmojiRow(gitmoji: gitmoji)
                     }
                 }
