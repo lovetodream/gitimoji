@@ -13,9 +13,6 @@ struct SettingsView: View {
     @StateObject private var updater = Updater()
     @StateObject private var fetcher = GitmojiFetcher()
 
-    @Binding var showSettings: Bool
-    @Binding var showAbout: Bool
-
     @State private var autoLaunchEnabled = false
 
     @AppStorage("copyEmoji") private var copyEmoji = false
@@ -23,105 +20,106 @@ struct SettingsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("Settings").font(.headline)
-                Spacer()
-                Button(action: {
-                    self.showSettings = false
-                }, label: {
-                    Image("DismissIcon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 16, height: 16)
-                }).buttonStyle(PlainButtonStyle())
-            }
-            Picker(selection: $copyEmoji, label: Text("Value to copy")) {
-                Text("Emoji Code eg. :tada:").tag(false)
-                Text("Emoji eg. 🎉").tag(true)
-            }
-            HStack {
-                Text("Toggle App Window")
-                Spacer()
-                KeyboardShortcuts.Recorder(for: .toggleApp)
-            }
-            HStack {
-                Text("Fetch new gitmojis")
-                Spacer()
-                Button {
-                    if fetcher.state != .loading {
-                        Task {
-                            await fetcher.refetch(on: viewContext)
+        VStack(spacing: 15) {
+            TabView {
+                VStack(spacing: 10) {
+                    Picker(selection: $copyEmoji, label: Text("Value to copy")) {
+                        Text("Emoji Code eg. :tada:").tag(false)
+                        Text("Emoji eg. 🎉").tag(true)
+                    }
+
+                    HStack {
+                        Text("Toggle App Window")
+                        Spacer()
+                        KeyboardShortcuts.Recorder(for: .toggleApp)
+                    }
+
+                    HStack {
+                        Text("Fetch new gitmojis")
+                        Spacer()
+                        Button {
+                            if fetcher.state != .loading {
+                                Task {
+                                    await fetcher.refetch(on: viewContext)
+                                }
+                            }
+                        } label: {
+                            switch fetcher.state {
+                            case .stateless:
+                                Text("Start fetch")
+                            case .loading:
+                                Text("Fetching...")
+                            case .success:
+                                Text("✅ Success")
+                            case .error:
+                                Text("🛑 Error occurred")
+                            }
+                        }
+                        .disabled(fetcher.state == .loading)
+                    }
+
+                    HStack {
+                        Spacer()
+                        Toggle(isOn: $autoLaunchEnabled) {
+                            Text("Launch App automatically")
                         }
                     }
-                } label: {
-                    switch fetcher.state {
-                    case .stateless:
-                        Text("Start fetch")
-                    case .loading:
-                        Text("Fetching...")
-                    case .success:
-                        Text("✅ Success")
-                    case .error:
-                        Text("🛑 Error occurred")
+
+                    HStack {
+                        Spacer()
+                        Button {
+                            updater.checkForUpdates()
+                        } label: {
+                            Text("Check for updates...")
+                        }
+                        .disabled(!updater.canCheckForUpdates)
                     }
+
+                    Spacer()
                 }
-                .disabled(fetcher.state == .loading)
-            }
-            Toggle(isOn: $autoLaunchEnabled) {
-                Text("Launch App automatically")
-            }
-            Button {
-                updater.checkForUpdates()
-            } label: {
-                Text("Check for updates...")
-            }
-            .disabled(!updater.canCheckForUpdates)
-            Button(action: {
-                self.showAbout.toggle()
-            }, label: {
-                if showAbout {
-                    Text("Hide additional informations")
-                } else {
-                    Text("More Informations about Gitmojis")
+                .padding()
+                .tabItem {
+                    Label("General", systemImage: "gear")
                 }
-            }).buttonStyle(LinkButtonStyle())
-            if showAbout {
+
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Gitmoji is an emoji guide for GitHub commit messages. Aims to be a standarization cheatsheet - guide for using emojis on GitHub's commit messages.")
-                                        
+
                     Text("Using emojis on commit messages provides an easy way of identifying the purpose or intention of a commit with only looking at the emojis used.")
-                    
+
+                    Spacer()
+
                 }
-                .frame(minHeight: 135)
                 .lineSpacing(1.5)
+                .padding()
+                .tabItem {
+                    Label("About", systemImage: "info")
+                }
             }
-            
-            Divider()
-            
-            HStack {
-                Button(action: {
-                    if let url = URL(string: "https://gitmoji.dev/") {
-                    NSWorkspace.shared.open(url)
-                    }
-                }, label: {
-                    Text("Gitmoji Website")
-                })
-                
+
+            HStack(spacing: 15) {
+                Link("Gitmoji Website", destination: Constants.Link.gitmoji)
+
                 Spacer()
-                
-                Button(action: {
-                    if let url = URL(string: "https://github.com/lovetodream/gitimoji") {
+
+                Link("Star on GitHub", destination: Constants.Link.repository)
+
+                Button {
+                    if let url = URL(string: "https://github.com/sponsors/lovetodream") {
                         NSWorkspace.shared.open(url)
                     }
-                }) {
-                    Text("Star on GitHub")
+                } label: {
+                    HStack {
+                        Image(systemName: "heart")
+                            .foregroundColor(.pink)
+                        Text("Sponsor")
+                    }
                 }
+                .buttonStyle(.bordered)
             }
+            .buttonStyle(.link)
         }
-        .padding(10)
-        .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black.opacity(0.1), lineWidth: 2.0))
-        .cornerRadius(10.0)
+        .padding()
         .onAppear {
             autoLaunchEnabled = NSWorkspace.shared.runningApplications.contains {
                 $0.bundleIdentifier == Constants.helperBundleIdentifier
@@ -135,8 +133,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(showSettings: .constant(true),
-                     showAbout: .constant(true))
+        SettingsView()
             .frame(width: 350)
     }
 }

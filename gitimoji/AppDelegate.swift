@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!
 
+    var preferencesWindow: NSWindow!
+
     let persistence = PersistenceController.shared
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -50,6 +52,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.popover.contentViewController?.view.window?.makeKey()
             }
         }
+    }
+
+    @objc func openPreferencesWindow() {
+        if preferencesWindow == nil {
+            let preferencesView = SettingsView()
+            preferencesWindow =  NSWindow(
+                contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+                styleMask: [.titled, .closable],
+                backing: .buffered, defer: false)
+            preferencesWindow.isReleasedWhenClosed = false
+            preferencesWindow.center()
+            preferencesWindow.title = "Gitimoji Settings"
+            preferencesWindow.setFrameAutosaveName("Preferences")
+            preferencesWindow.contentView = NSHostingView(rootView: preferencesView)
+        }
+        NSApp.activate(ignoringOtherApps: true)
+        preferencesWindow.makeKeyAndOrderFront(nil)
     }
 
 }
