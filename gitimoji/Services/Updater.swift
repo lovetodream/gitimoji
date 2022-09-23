@@ -1,5 +1,5 @@
 //
-//  UpdaterVM.swift
+//  Updater.swift
 //  gitimoji
 //
 //  Created by Timo Zacherl on 16.12.21.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Sparkle
 
-final class UpdaterViewModel: ObservableObject {
+final class Updater: ObservableObject {
     private let updaterController: SPUStandardUpdaterController
     
     @Published var canCheckForUpdates = false
