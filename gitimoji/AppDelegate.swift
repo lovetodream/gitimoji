@@ -14,6 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!
+
+    let persistence = PersistenceController.shared
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -23,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         popover.contentSize = NSSize(width: 370, height: 330)
         popover.behavior = .transient
-        popover.contentViewController = NSHostingController(rootView: contentView)
+        popover.contentViewController = NSHostingController(rootView: contentView.environment(\.managedObjectContext, persistence.container.viewContext))
         
         self.popover = popover
         

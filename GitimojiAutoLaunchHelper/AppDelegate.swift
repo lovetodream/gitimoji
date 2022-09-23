@@ -23,7 +23,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             for _ in 1...4 {
                 url = url.deletingLastPathComponent()
             }
-            let configuration = NSWorkspace.OpenConfiguration()
             NSWorkspace.shared.openApplication(at: url, configuration: .init())
         }
     }
