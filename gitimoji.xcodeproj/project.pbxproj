@@ -287,7 +287,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					06131F1A2518C9A6003159AA = {
 						CreatedOnToolsVersion = 11.7;
@@ -407,7 +407,9 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V7ET8TF7ZR;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = V7ET8TF7ZR;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GitimojiAutoLaunchHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,6 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -428,11 +431,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitimojiAutoLaunchHelper/GitimojiAutoLaunchHelper.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Timo Zacherl (V7ET8TF7ZR)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = V7ET8TF7ZR;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = V7ET8TF7ZR;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = GitimojiAutoLaunchHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,6 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timozacherl.GitimojiAutoLaunchHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -482,6 +488,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -543,6 +550,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -569,10 +577,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = gitimoji/gitimoji.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"gitimoji/Preview Content\"";
 				DEVELOPMENT_TEAM = V7ET8TF7ZR;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = V7ET8TF7ZR;
@@ -599,10 +609,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = gitimoji/gitimoji.entitlements;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"gitimoji/Preview Content\"";
 				DEVELOPMENT_TEAM = V7ET8TF7ZR;
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = V7ET8TF7ZR;
