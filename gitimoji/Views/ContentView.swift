@@ -20,9 +20,7 @@ struct ContentView: View {
         return Array(gitmojis)
     }
 
-    @StateObject private var vm = SearchVM()
-
-    @State private var showSettings: Bool = false
+    @State private var showSettings = false
     @State private var showAbout = false
     
     var body: some View {
@@ -66,7 +64,7 @@ struct ContentView: View {
                     .buttonStyle(PlainButtonStyle())
                 }.padding(.bottom, 10)
                 if showSettings {
-                    SettingsView(vm: vm, showSettings: $showSettings, showAbout: $showAbout)
+                    SettingsView(showSettings: $showSettings, showAbout: $showAbout)
                 }
                 ScrollView {
                     ForEach(searchResults) { gitmoji in
