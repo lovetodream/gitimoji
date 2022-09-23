@@ -21,15 +21,26 @@ struct EmojiRow: View {
         }, label: {
             HStack {
                 Group {
-                    Text(gitmoji.emoji ?? "🥗").font(.custom("Apple Color Emoji", size: 20)).padding(.vertical, -4)
-                    Text(gitmoji.emojiDescription ?? "standard description").padding(.vertical, 2)
+                    Text(gitmoji.emoji ?? "🥗")
+                        .font(.custom("Apple Color Emoji", size: 20))
+                        .padding(.vertical, -4)
+                    Text(gitmoji.emojiDescription ?? "standard description")
+                        .padding(.vertical, 2)
                 }
                 Spacer()
                 if recentlyCopied {
-                    Text("Copied").padding(.horizontal, 8).padding(.vertical, 2).background(Color(hex: "00e676")).cornerRadius(5.0)
+                    Text("Copied")
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(Color.accentColor.opacity(0.8))
+                        .foregroundColor(.white)
+                        .cornerRadius(5.0)
                 }
             }
-        }).buttonStyle(EmojiCodeButtonStyle(hovering: self.hovering, background: Color(hex: "00e676", opacity: 0.4), border: Color(hex: "00e676")))
+        })
+        .buttonStyle(EmojiCodeButtonStyle(hovering: self.hovering,
+                                          background: Color.accentColor.opacity(0.4),
+                                          border: Color.accentColor))
         .onHover { hovering in
             self.hovering = hovering
         }
