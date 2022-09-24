@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popover: NSPopover!
     var statusBarItem: NSStatusItem!
 
-    var preferencesWindow: NSWindow!
+    var settingsWindow: NSWindow!
 
     let persistence = PersistenceController.shared
     
@@ -55,20 +55,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func openPreferencesWindow() {
-        if preferencesWindow == nil {
-            let preferencesView = SettingsView()
-            preferencesWindow =  NSWindow(
+        if settingsWindow == nil {
+            let settingsView = SettingsView()
+            settingsWindow =  NSWindow(
                 contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
                 styleMask: [.titled, .closable],
                 backing: .buffered, defer: false)
-            preferencesWindow.isReleasedWhenClosed = false
-            preferencesWindow.center()
-            preferencesWindow.title = "Gitimoji Settings"
-            preferencesWindow.setFrameAutosaveName("Preferences")
-            preferencesWindow.contentView = NSHostingView(rootView: preferencesView)
+            settingsWindow.isReleasedWhenClosed = false
+            settingsWindow.center()
+            settingsWindow.title = "Gitimoji Settings"
+            settingsWindow.setFrameAutosaveName("Settings")
+            settingsWindow.contentView = NSHostingView(rootView: settingsView.environment(\.managedObjectContext, persistence.container.viewContext))
         }
         NSApp.activate(ignoringOtherApps: true)
-        preferencesWindow.makeKeyAndOrderFront(nil)
+        settingsWindow.makeKeyAndOrderFront(nil)
     }
 
 }
