@@ -1,8 +1,8 @@
-# Gitimoji - Gitmoji for MacOS <span style="position: relative; top: 5px;"><img src="https://github.com/lovetodream/gitimoji/blob/master/gitimoji/Assets.xcassets/AppIcon.appiconset/Mac%2032.png?raw=true"></span>
+# Gitimoji - Gitmoji for MacOS
 
-![macos >= 10.15](https://shields.io/badge/macos-%3E%3D%2010.15-informational "macos >= 10.15")
+![macos >= 12](https://shields.io/badge/macos-%3E%3D%2012-informational "macos >= 12")
 
-![Preview Image](readme-assets/1440x900bb.png "Preview Image")
+![Preview Image](readme-assets/preview.png "Preview Image")
 
 ## About
 
