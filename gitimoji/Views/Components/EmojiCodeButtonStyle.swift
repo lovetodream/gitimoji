@@ -14,7 +14,7 @@ struct EmojiCodeButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(5)
-            .background(hovering ? Color.secondary.opacity(0.4) : Color.clear)
+            .background(hovering ? Color.secondary.opacity(0.2) : Color.clear)
             .cornerRadius(5.0)
     }
 }
