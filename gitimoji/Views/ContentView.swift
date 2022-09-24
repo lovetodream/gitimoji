@@ -32,7 +32,7 @@ struct ContentView: View {
                         EmojiRow(gitmoji: gitmoji)
                     }
                 }
-                .padding(.top, 9)
+                .padding(.vertical, 9)
             }
             Divider()
             HStack {
