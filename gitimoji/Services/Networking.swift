@@ -29,7 +29,7 @@ enum NetworkingError: Error {
 
 struct Networking {
     static func fetchEmojis() async throws -> [GitmojiResponse] {
-        let url = URL(string: "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/src/data/gitmojis.json")
+        let url = URL(string: "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/packages/gitmojis/src/gitmojis.json")
 
         guard let url = url else {
             preconditionFailure("Gitmoji fetch URL invalid")
