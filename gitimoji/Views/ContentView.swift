@@ -11,6 +11,8 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Gitmoji.name, ascending: true)])
     private var gitmojis: FetchedResults<Gitmoji>
 
+    @Environment(\.managedObjectContext) private var viewContext
+
     @State private var searchText = ""
 
     private var searchResults: [Gitmoji] {
@@ -23,13 +25,29 @@ struct ContentView: View {
     @State private var showSettings = false
     @State private var showAbout = false
 
+    @StateObject private var fetcher = GitmojiFetcher()
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             GMSearchField(searchText: $searchText)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    ForEach(searchResults) { gitmoji in
-                        EmojiRow(gitmoji: gitmoji)
+                    if searchResults.isEmpty {
+                        HStack {
+                            Spacer()
+                            if searchText.isEmpty {
+                                Text("No Gitmojis downloaded, please open Settings to perform the initial Download.")
+                            } else {
+                                Text("No matching Gitmojis found")
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    } else {
+                        ForEach(searchResults) { gitmoji in
+                            EmojiRow(gitmoji: gitmoji)
+                        }
                     }
                 }
                 .padding(.vertical, 9)
@@ -48,6 +66,11 @@ struct ContentView: View {
         }
         .buttonStyle(.plain)
         .padding()
+        .task {
+            if gitmojis.isEmpty {
+                await fetcher.refetch(on: viewContext)
+            }
+        }
     }
 }
 

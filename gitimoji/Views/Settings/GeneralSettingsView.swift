@@ -14,7 +14,13 @@ struct GeneralSettingsView: View {
 
     @Binding var autoLaunchEnabled: Bool
 
-    @AppStorage("copyEmoji") private var copyEmoji = false
+    @AppStorage(Constants.DefaultKey.copyEmoji.rawValue)
+    private var copyEmoji = false
+
+    @AppStorage(Constants.DefaultKey.gitmojiFetchURL.rawValue)
+    private var url: URL = URL(string: "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/packages/gitmojis/src/gitmojis.json")!
+
+    @State private var urlString = ""
 
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -56,6 +62,25 @@ struct GeneralSettingsView: View {
             }
 
             HStack {
+                Text("Gitmoji Fetch URL")
+                Group {
+                    if #available(macOS 13.0, *) {
+                        TextField("URL", value: $url, format: .url)
+                    } else {
+                        TextField("URL", text: $urlString)
+                            .onChange(of: urlString) { newValue in
+                                guard let url = URL(string: newValue) else {
+                                    return
+                                }
+                                self.url = url
+                            }
+                    }
+                }
+                .multilineTextAlignment(.trailing)
+                .textFieldStyle(.roundedBorder)
+            }
+
+            HStack {
                 Spacer()
                 Toggle(isOn: $autoLaunchEnabled) {
                     Text("Launch App automatically")
@@ -73,6 +98,12 @@ struct GeneralSettingsView: View {
             }
 
             Spacer()
+        }
+        .alert(
+            isPresented: $fetcher.isShowingError,
+            error: fetcher.lastError
+        ) {
+            Button("Ok", role: .cancel) {}
         }
     }
 }

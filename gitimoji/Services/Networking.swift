@@ -7,7 +7,7 @@
 
 import Foundation
 
-fileprivate struct Response: Decodable {
+private struct Response: Decodable {
     let gitmojis: [GitmojiResponse]
 }
 
@@ -23,23 +23,32 @@ enum Semver: String, Decodable {
     case patch = "patch"
 }
 
-enum NetworkingError: Error {
-    case invalidResponse
+enum NetworkingError: LocalizedError {
+    case invalidResponse(context: String?)
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidResponse(let context):
+            return context ?? "Unexpected response received."
+        }
+    }
 }
 
-struct Networking {
+enum Networking {
     static func fetchEmojis() async throws -> [GitmojiResponse] {
-        let url = URL(string: "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/packages/gitmojis/src/gitmojis.json")
+        let url = UserDefaults.standard.url(forKey: Constants.DefaultKey.gitmojiFetchURL.rawValue) ??
+            URL(string: "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/packages/gitmojis/src/gitmojis.json")
 
-        guard let url = url else {
+        guard let url else {
             preconditionFailure("Gitmoji fetch URL invalid")
         }
 
         let (data, response) = try await URLSession.shared.data(from: url)
 
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            print("Unexpected response: \(String(describing: response))")
-            throw NetworkingError.invalidResponse
+            throw NetworkingError.invalidResponse(
+                context: "Unexpected response received: \(String(data: data, encoding: .utf8) ?? "empty")"
+            )
         }
 
         return try JSONDecoder().decode(Response.self, from: data).gitmojis

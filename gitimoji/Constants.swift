@@ -15,6 +15,11 @@ extension KeyboardShortcuts.Name {
 enum Constants {
     static let helperBundleIdentifier = "com.timozacherl.GitimojiAutoLaunchHelper"
 
+    enum DefaultKey: String {
+        case gitmojiFetchURL
+        case copyEmoji
+    }
+
     enum Link {
         static let repository: URL = {
             guard let url = URL(string: "https://github.com/lovetodream/gitimoji") else {

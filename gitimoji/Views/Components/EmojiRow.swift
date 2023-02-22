@@ -13,7 +13,8 @@ struct EmojiRow: View {
     @State private var hovering = false
     @State private var recentlyCopied = false
 
-    @AppStorage("copyEmoji") private var copyEmoji = false
+    @AppStorage(Constants.DefaultKey.copyEmoji.rawValue)
+    private var copyEmoji = false
     
     var body: some View {
         Button(action: {
