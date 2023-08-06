@@ -16,6 +16,9 @@ struct EmojiRow: View {
     @AppStorage(Constants.DefaultKey.copyEmoji.rawValue)
     private var copyEmoji = false
     
+    @AppStorage(Constants.DefaultKey.closePopoverAfterCopy.rawValue)
+    private var closePopoverAfterCopy = false
+    
     var body: some View {
         Button(action: {
             // copy to clipboard
@@ -55,6 +58,9 @@ struct EmojiRow: View {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { timer in
             withAnimation {
                 self.recentlyCopied = false
+                if closePopoverAfterCopy {
+                    NSApp.sendAction(#selector(AppDelegate.togglePopover), to: nil, from: nil)
+                }
             }
         }
     }

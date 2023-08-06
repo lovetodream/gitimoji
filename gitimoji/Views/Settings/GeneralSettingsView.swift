@@ -17,6 +17,9 @@ struct GeneralSettingsView: View {
     @AppStorage(Constants.DefaultKey.copyEmoji.rawValue)
     private var copyEmoji = false
 
+    @AppStorage(Constants.DefaultKey.closePopoverAfterCopy.rawValue)
+    private var closePopoverAfterCopy = false
+    
     @AppStorage(Constants.DefaultKey.gitmojiFetchURL.rawValue)
     private var url: URL = URL(string: "https://raw.githubusercontent.com/carloscuesta/gitmoji/master/packages/gitmojis/src/gitmojis.json")!
 
@@ -31,6 +34,13 @@ struct GeneralSettingsView: View {
                 Text("Emoji eg. 🎉").tag(true)
             }
 
+            HStack {
+                Spacer()
+                Toggle(isOn: $closePopoverAfterCopy) {
+                    Text("Close popover automatically after copy")
+                }
+            }
+            
             HStack {
                 Text("Toggle App Window")
                 Spacer()

@@ -18,6 +18,7 @@ enum Constants {
     enum DefaultKey: String {
         case gitmojiFetchURL
         case copyEmoji
+        case closePopoverAfterCopy
     }
 
     enum Link {
